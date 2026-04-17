@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuPedido! | Tu propio sistema de pedidos</title>
+  <meta
+    name="description"
+    content="TuPedido! crea la web app de pedidos de tu negocio con tu marca, tus productos y pedidos claros por WhatsApp, sin intermediarios."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark">TP</div>
+        <div class="brand-copy">
+          <span class="brand-title">TuPedido!</span>
+          <span class="brand-subtitle">Tu marca. Tu sistema. Tus pedidos.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#planes">Planes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a
+        href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20mi%20demo."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Quiero mi demo
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Web app de pedidos con tu propia marca</div>
+
+          <h1>
+            Tu negocio merece
+            <span>su propio sistema de pedidos</span>
+          </h1>
+
+          <p class="hero-text">
+            Con <strong>TuPedido!</strong> tenés una web app pensada para mostrar
+            <strong>tu marca, tus productos y tus promos</strong>, recibir pedidos
+            <strong>claros y ordenados por WhatsApp</strong>, y además usar tu sistema
+            como herramienta de publicidad con <strong>link y QR</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20solicitar%20una%20demo."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary btn-lg"
+            >
+              Solicitar demo
+            </a>
+
+            <a href="#planes" class="btn btn-ghost btn-lg">Ver planes</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point-card">
+              <strong>Tu marca</strong>
+              <span>sin depender de plataformas ajenas</span>
+            </div>
+            <div class="point-card">
+              <strong>Pedidos claros</strong>
+              <span>directo a WhatsApp</span>
+            </div>
+            <div class="point-card">
+              <strong>QR incluido</strong>
+              <span>para flyers, packaging y redes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media reveal delay-1">
+          <div class="video-card">
+            <div class="video-top">
+              <div>
+                <p class="mini-label">Video explicativo</p>
+                <h3>Así funciona TuPedido!</h3>
+              </div>
+              <span class="video-badge">Demo</span>
+            </div>
+
+            <div class="video-frame" id="videoFrame">
+              <button class="video-play" id="playVideo" type="button" aria-label="Reproducir video">
+                <span class="play-icon">▶</span>
+              </button>
+
+              <div class="video-overlay-text">
+                <strong>Mostrá tu marca</strong>
+                <span>Recibí pedidos claros. Vendé sin intermediarios.</span>
+              </div>
+
+              <!-- Reemplazá VIDEO_ID por tu video real -->
+              <iframe
+                id="demoVideo"
+                src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1&rel=0&modestbranding=1"
+                title="Video explicativo de TuPedido!"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="video-highlights">
+              <div class="highlight-chip">Tu logo y colores</div>
+              <div class="highlight-chip">Productos y promos</div>
+              <div class="highlight-chip">WhatsApp ordenado</div>
+              <div class="highlight-chip">QR para difundir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-tag">Por qué funciona tan bien</div>
+          <h2>Más simple para tu cliente. Más profesional para tu negocio.</h2>
+          <p>
+            TuPedido! está pensado para que tu negocio se vea mejor, venda mejor
+            y ordene mucho más la forma de recibir pedidos.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="info-card reveal">
+            <div class="icon-badge">🎨</div>
+            <h3>Tu marca por encima de todo</h3>
+            <p>Logo, colores, banners, categorías y estilo visual totalmente personalizados.</p>
+          </article>
+
+          <article class="info-card reveal delay-1">
+            <div class="icon-badge">📲</div>
+            <h3>Pedidos ordenados a WhatsApp</h3>
+            <p>El cliente elige y el pedido llega listo, claro y mucho más fácil de atender.</p>
+          </article>
+
+          <article class="info-card reveal delay-2">
+            <div class="icon-badge">💳</div>
+            <h3>Alias y datos de pago visibles</h3>
+            <p>Mostrá tus datos de cobro para evitar errores de tipeo y facilitar la compra.</p>
+          </article>
+
+          <article class="info-card reveal">
+            <div class="icon-badge">📣</div>
+            <h3>También sirve para hacer publicidad</h3>
+            <p>Tu sistema se comparte con link o QR en flyers, packaging, carteles y redes.</p>
+          </article>
+
+          <article class="info-card reveal delay-1">
+            <div class="icon-badge">⚡</div>
+            <h3>Diseño intuitivo</h3>
+            <p>Una experiencia clara y rápida para que el cliente entienda, elija y compre mejor.</p>
+          </article>
+
+          <article class="info-card reveal delay-2">
+            <div class="icon-badge">🧠</div>
+            <h3>Más confianza, más conversión</h3>
+            <p>Una imagen más moderna mejora la percepción del negocio y ayuda a vender más.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section class="section section-soft">
+      <div class="container compare-grid">
+        <article class="compare-card reveal">
+          <div class="compare-pill compare-pill-muted">Sin TuPedido!</div>
+          <h3>Venta improvisada</h3>
+          <ul>
+            <li>Mensajes desordenados</li>
+            <li>Errores en productos o pagos</li>
+            <li>Poca imagen de marca</li>
+            <li>Menor claridad para el cliente</li>
+          </ul>
+        </article>
+
+        <article class="compare-card compare-card-strong reveal delay-1">
+          <div class="compare-pill compare-pill-strong">Con TuPedido!</div>
+          <h3>Tu sistema propio</h3>
+          <ul>
+            <li>Tu marca visible todo el tiempo</li>
+            <li>Pedido claro al WhatsApp</li>
+            <li>Productos y promos mejor presentados</li>
+            <li>QR para difundir tu sistema</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-tag">Cómo funciona</div>
+          <h2>Lo armamos simple para que empieces rápido</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <div class="step-number">1</div>
+            <h3>Armamos tu sistema</h3>
+            <p>Diseñamos la web app con tu marca, tus productos, tus datos y tu estilo.</p>
+          </article>
+
+          <article class="step-card reveal delay-1">
+            <div class="step-number">2</div>
+            <h3>Te damos tu link + QR</h3>
+            <p>Listo para compartir en Instagram, WhatsApp, flyers, packaging o carteles.</p>
+          </article>
+
+          <article class="step-card reveal delay-2">
+            <div class="step-number">3</div>
+            <h3>Recibís pedidos ordenados</h3>
+            <p>El cliente entra, mira, elige y te manda el pedido directo por WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="section section-soft" id="planes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-tag">Planes</div>
+          <h2>Un valor inicial + packs de mantenimiento accesibles</h2>
+          <p>
+            Entrás con una implementación inicial y después elegís el pack que mejor
+            acompañe el movimiento de tu negocio.
+          </p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card plan-main reveal">
+            <div class="plan-label">Implementación inicial</div>
+            <h3>Tu sistema listo para vender</h3>
+            <div class="plan-price">$50.000</div>
+            <ul>
+              <li>Diseño personalizado</li>
+              <li>Carga base de productos</li>
+              <li>Datos de pago visibles</li>
+              <li>Botón directo a WhatsApp</li>
+              <li>QR de acceso</li>
+            </ul>
+            <a
+              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20consultar%20por%20la%20implementaci%C3%B3n%20inicial%20de%20%2450.000."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary btn-full"
+            >
+              Quiero empezar
+            </a>
+          </article>
+
+          <article class="plan-card reveal delay-1">
+            <div class="plan-label">Pack 1</div>
+            <h3>Mantenimiento básico</h3>
+            <div class="plan-price">$5.000<span>/ mes</span></div>
+            <ul>
+              <li>Cambios simples</li>
+              <li>Actualización de datos</li>
+              <li>Banners y textos</li>
+              <li>Soporte básico</li>
+            </ul>
+            <a
+              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20consultar%20por%20el%20Pack%201%20de%20mantenimiento%20de%20%245.000%20mensuales."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost btn-full"
+            >
+              Elegir pack
+            </a>
+          </article>
+
+          <article class="plan-card reveal delay-2">
+            <div class="plan-label">Pack 2</div>
+            <h3>Mantenimiento medio</h3>
+            <div class="plan-price">$10.000<span>/ mes</span></div>
+            <ul>
+              <li>Más cambios mensuales</li>
+              <li>Actualización de productos</li>
+              <li>Promos y secciones</li>
+              <li>Soporte preferencial</li>
+            </ul>
+            <a
+              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20consultar%20por%20el%20Pack%202%20de%20mantenimiento%20de%20%2410.000%20mensuales."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost btn-full"
+            >
+              Elegir pack
+            </a>
+          </article>
+
+          <article class="plan-card reveal delay-2">
+            <div class="plan-label">Pack 3</div>
+            <h3>Mantenimiento full</h3>
+            <div class="plan-price">$15.000<span>/ mes</span></div>
+            <ul>
+              <li>Cambios frecuentes</li>
+              <li>Mayor acompañamiento</li>
+              <li>Actualización constante</li>
+              <li>Más foco comercial</li>
+            </ul>
+            <a
+              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20consultar%20por%20el%20Pack%203%20de%20mantenimiento%20de%20%2415.000%20mensuales."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost btn-full"
+            >
+              Pedir asesoramiento
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container cta-box reveal">
+        <div class="cta-copy">
+          <div class="section-tag">TuPedido!</div>
+          <h2>Tu negocio puede tener su propio sistema de pedidos desde ahora</h2>
+          <p>
+            No dependas de sistemas ajenos para vender. Mostrá tu identidad,
+            organizá mejor tus pedidos y usá tu propio canal para vender y hacer publicidad.
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a
+            href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vengo%20desde%20la%20landing%20de%20TuPedido!%20y%20quiero%20mi%20demo%20comercial."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-lg"
+          >
+            Hablar por WhatsApp
+          </a>
+          <a href="#planes" class="btn btn-ghost btn-lg">Ver packs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head center reveal">
+          <div class="section-tag">FAQ</div>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <details class="faq-item reveal">
+          <summary>¿TuPedido! sirve solo para comida?</summary>
+          <p>No. Está muy orientado a gastronomía, pero puede adaptarse a otros rubros con productos o pedidos simples.</p>
+        </details>
+
+        <details class="faq-item reveal delay-1">
+          <summary>¿Puedo tener mi logo, colores y productos?</summary>
+          <p>Sí. Justamente la idea es que el sistema se vea propio y represente tu negocio.</p>
+        </details>
+
+        <details class="faq-item reveal delay-2">
+          <summary>¿Los pedidos llegan a mi WhatsApp?</summary>
+          <p>Sí. Llegan ordenados para que la atención sea más rápida y profesional.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>¿Incluye QR para publicidad?</summary>
+          <p>Sí. El QR sirve para flyers, packaging, carteles, vidrieras o campañas en redes.</p>
+        </details>
+
+        <details class="faq-item reveal delay-1">
+          <summary>¿Puedo mostrar alias o datos de pago?</summary>
+          <p>Sí. Se pueden incluir para facilitar la compra y evitar errores de tipeo.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section-soft" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <div class="section-tag">Contacto</div>
+          <h2>Pedí tu demo comercial de TuPedido!</h2>
+          <p>
+            Mostrale a tus clientes un sistema moderno, intuitivo y 100% propio.
+            Una herramienta para vender mejor y hacer crecer tu marca.
+          </p>
+        </div>
+
+        <form class="contact-card reveal delay-1" id="demoForm">
+          <h3>Quiero mi demo</h3>
+
+          <input type="text" id="nombre" placeholder="Nombre" />
+          <input type="text" id="negocio" placeholder="Nombre del negocio" />
+          <input type="text" id="telefono" placeholder="WhatsApp" />
+          <textarea id="mensaje" placeholder="Contame qué tipo de negocio tenés y qué te gustaría mostrar"></textarea>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Quiero mi demo por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
