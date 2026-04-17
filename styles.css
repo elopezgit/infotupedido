@@ -833,3 +833,63 @@ textarea {
     font-size: 1.4rem;
   }
 }
+
+.demo-cta {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-demo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 10px 25px rgba(0, 114, 255, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow animado */
+.btn-demo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.btn-demo:hover::before {
+  left: 130%;
+}
+
+/* Hover */
+.btn-demo:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 114, 255, 0.6);
+}
+
+/* Efecto pulsante constante */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 114, 255, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 114, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 114, 255, 0);
+  }
+}
+
+.btn-demo {
+  animation: pulseGlow 2.5s infinite;
+}
