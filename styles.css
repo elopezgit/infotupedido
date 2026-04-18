@@ -1251,3 +1251,212 @@ textarea {
     transform: translateY(0px) rotate(0deg);
   }
 }
+
+
+.benefits-bubbles-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(123, 97, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 85% 20%, rgba(255, 138, 91, 0.10), transparent 18%),
+    linear-gradient(180deg, #f9f8ff 0%, #f4f8ff 100%);
+}
+
+.benefits-mini-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(123, 97, 255, 0.10);
+  border: 1px solid rgba(123, 97, 255, 0.08);
+  color: #7b61ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.benefits-subtitle {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits-bubbles-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 22px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.benefit-bubble {
+  position: relative;
+  width: 250px;
+  min-height: 250px;
+  border-radius: 999px;
+  padding: 34px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(123, 97, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(98, 96, 160, 0.10);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+.benefit-bubble:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 24px 50px rgba(98, 96, 160, 0.16);
+}
+
+.benefit-bubble-main {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(245,242,255,0.95));
+  animation-delay: 0s;
+}
+
+.benefit-bubble-secondary {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(239,250,247,0.96));
+  transform: translateY(18px);
+  animation-delay: 0.8s;
+}
+
+.benefit-bubble-accent {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,243,235,0.96));
+  animation-delay: 1.4s;
+}
+
+.benefit-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 999px;
+  border: 1px dashed rgba(123, 97, 255, 0.10);
+  pointer-events: none;
+}
+
+.benefit-bubble-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  font-size: 1.35rem;
+  background: linear-gradient(135deg, rgba(123,97,255,0.14), rgba(55,198,179,0.16));
+  color: #7b61ff;
+  box-shadow: 0 10px 24px rgba(123, 97, 255, 0.10);
+}
+
+.benefit-bubble h3 {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 900;
+  color: #1f2340;
+}
+
+.benefit-bubble p {
+  margin: 10px 0 0;
+  color: #69718f;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  max-width: 170px;
+}
+
+.benefits-mini-row {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.benefits-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(123, 97, 255, 0.08);
+  box-shadow: 0 10px 24px rgba(98, 96, 160, 0.08);
+  color: #2c3153;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.benefits-pill i {
+  color: #7b61ff;
+  font-size: 0.95rem;
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-bubbles-wrap {
+    gap: 16px;
+    margin-top: 26px;
+  }
+
+  .benefit-bubble,
+  .benefit-bubble-main,
+  .benefit-bubble-secondary,
+  .benefit-bubble-accent {
+    width: 100%;
+    max-width: 290px;
+    min-height: 230px;
+    transform: none;
+  }
+
+  .benefit-bubble {
+    padding: 28px 22px;
+    border-radius: 34px;
+    animation: bubbleFloatMobile 4.5s ease-in-out infinite;
+  }
+
+  .benefit-bubble::before {
+    inset: 10px;
+    border-radius: 28px;
+  }
+
+  .benefit-bubble p {
+    max-width: 100%;
+  }
+
+  .benefits-mini-row {
+    margin-top: 24px;
+    gap: 10px;
+  }
+
+  .benefits-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes bubbleFloatMobile {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
