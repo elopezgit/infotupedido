@@ -12,12 +12,13 @@ if (demoForm) {
     const telefono = document.getElementById("telefono").value.trim();
     const mensaje = document.getElementById("mensaje").value.trim();
 
-    const texto = `Hola Esteban, vengo desde la landing de TuPedido! y quiero seguir con el pedido de demo.
+    const texto = `Hola Esteban 👋
+Vengo desde la landing de TuPedido y quiero seguir con mi demo.
 
-Nombre: ${nombre || "-"}
-Negocio: ${negocio || "-"}
-WhatsApp: ${telefono || "-"}
-Consulta: ${mensaje || "-"}`;
+📌 Nombre: ${nombre || "-"}
+🏪 Negocio: ${negocio || "-"}
+📱 WhatsApp: ${telefono || "-"}
+💬 Consulta: ${mensaje || "-"}`;
 
     const url = `https://wa.me/5493813159106?text=${encodeURIComponent(texto)}`;
     window.open(url, "_blank");
