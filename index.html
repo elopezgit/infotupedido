@@ -1,678 +1,449 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="lenis lenis-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>TuPedido! | El futuro de los pedidos con tu marca</title>
+  <meta name="description" content="TuPedido!: sistema de pedidos con tu marca, directo a WhatsApp. Una experiencia premium de ventas para tu negocio." />
 
-  <title>TuPedido! | Tu sistema de pedidos con tu marca</title>
-  <meta
-    name="description"
-    content="TuPedido!: sistema de pedidos con tu marca, directo a WhatsApp, con demo, QR y packs de mantenimiento."
-  />
-
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- SPLASH -->
-  <div id="splash" aria-hidden="true">
-    <div class="splash-inner">
-      <div class="splash-logo-mark">TP</div>
-      <div class="splash-logo-text">TuPedido!</div>
+<body class="loading-state">
+
+  <!-- SPLASH / PRELOADER -->
+  <div id="splash" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-brand">
+        <div class="splash-icon">TP</div>
+        <div class="splash-text">TuPedido!</div>
+      </div>
+      <div class="splash-progress">
+        <div class="progress-bar"></div>
+      </div>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#inicio" class="brand" aria-label="TuPedido">
-        <div class="brand-mark">TP</div>
+  <!-- AMBIENT NOISE & GLOW -->
+  <div class="ambient-noise"></div>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
 
-        <div class="brand-copy">
-          <strong>TuPedido!</strong>
-          <span>Tu marca. Tu sistema. Tus pedidos.</span>
-        </div>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container glass-island">
+      <a href="#inicio" class="brand magnetic">
+        <div class="brand-mark">TP</div>
+        <span class="brand-name">TuPedido!</span>
       </a>
 
-      <nav class="topbar-nav">
-        <a href="#rubros">Rubros</a>
-        <a href="#funciona">Cómo funciona</a>
-        <a href="#incluye">Qué incluye</a>
-        <a href="#planes">Planes</a>
+      <nav class="nav-links">
+        <a href="#demo" class="nav-link">Demo</a>
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#planes" class="nav-link">Planes</a>
       </nav>
 
-      <a
-        href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20mi%20demo%20de%20TuPedido"
-        class="btn btn-light topbar-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Quiero mi demo
+      <a href="https://tupedidoapp.netlify.app/" target="_blank" rel="noopener" class="btn btn-nav magnetic">
+        <span>Probar Demo</span>
+        <i data-lucide="play" class="btn-icon-small"></i>
       </a>
+
+      <button class="menu-trigger magnetic" id="menu-btn">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-nav">
+      <a href="#demo" class="m-link">Demo</a>
+      <a href="#beneficios" class="m-link">Beneficios</a>
+      <a href="#planes" class="m-link">Planes</a>
+      <a href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20mi%20demo%20de%20TuPedido" target="_blank" class="m-link highlight">Contactar</a>
+    </div>
+  </div>
+
   <main id="inicio">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content text-center">
+          <div class="hero-badge reveal-item">
+            <span class="pulse-dot"></span>
+            <span>Sistema Web App Premium</span>
+          </div>
 
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="hero-badge">Sistema de pedidos con tu marca</span>
-
-          <h1>
-            Tu negocio merece
-            <span>su propio sistema</span>
-            de pedidos
+          <h1 class="hero-title">
+            <span class="text-line"><span class="line-inner">El futuro de</span></span>
+            <span class="text-line"><span class="line-inner">tus pedidos está</span></span>
+            <span class="text-line"><span class="line-inner gradient-text">en tu propia marca.</span></span>
           </h1>
 
-          <p class="hero-text">
-            Mostrá tus productos, compartí tu link o QR y recibí pedidos mucho
-            más claros por WhatsApp, con una imagen más profesional para tu negocio.
+          <p class="hero-subtitle reveal-item delay-1">
+            Revolucioná la forma en que tus clientes te compran. Un sistema visual, ultrarrápido y sin comisiones, conectado directamente a tu WhatsApp.
           </p>
 
-          <div class="hero-mini-points">
-            <span class="mini-point">Tu marca</span>
-            <span class="mini-point">Pedidos ordenados</span>
-            <span class="mini-point">Link + QR</span>
-            <span class="mini-point">Sin comisiones</span>
-          </div>
-
-          <div class="hero-actions">
-            <a
-              href="https://tupedidoapp.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              <i class="fa-solid fa-mobile-screen-button"></i>
-              Ver demo
+          <div class="hero-actions reveal-item delay-2">
+            <a href="https://tupedidoapp.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-massive magnetic">
+              <span class="btn-glow"></span>
+              <span>Probar Demo Interactiva</span>
+              <i data-lucide="arrow-right"></i>
             </a>
-
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20informaci%C3%B3n%20de%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-outline-white"
-            >
-              <i class="fa-brands fa-whatsapp"></i>
-              Hablar ahora
+            <a href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20informaci%C3%B3n%20de%20TuPedido" target="_blank" rel="noopener" class="btn btn-secondary magnetic">
+              <span>Hablemos por WhatsApp</span>
             </a>
           </div>
+          
+          <div class="hero-features reveal-item delay-3">
+            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Sin Comisiones</span></div>
+            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Diseño Propio</span></div>
+            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Link + QR</span></div>
+          </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-circle"></div>
-          <div class="hero-ring"></div>
+        <div class="hero-visual reveal-item delay-4">
+          <!-- Glassmorphism Phone Mockup Abstract -->
+          <div class="mockup-container">
+            <div class="mockup-frame glass-panel">
+              <div class="mockup-screen">
+                <div class="mockup-nav"></div>
+                <div class="mockup-item"></div>
+                <div class="mockup-item"></div>
+                <div class="mockup-item"></div>
+                <div class="mockup-btn"></div>
+              </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="float-card float-1 glass-panel gs-float-1">
+              <i data-lucide="message-square" class="gradient-icon"></i>
+              <div class="fc-text">
+                <strong>WhatsApp</strong>
+                <span>Pedido Recibido</span>
+              </div>
+            </div>
+            <div class="float-card float-2 glass-panel gs-float-2">
+              <i data-lucide="scan-line" class="gradient-icon"></i>
+              <div class="fc-text">
+                <strong>QR Code</strong>
+                <span>Escaneo Rápido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-down-hint">
+        <span>Explorar</span>
+        <div class="mouse-icon"></div>
+      </div>
+    </section>
 
-          <img
-            src="img/central3.avif"
-            alt="Persona usando TuPedido"
-            class="hero-person"
-          />
+    <!-- MARQUEE INFINITO (RUBROS) -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="mq-item"><i data-lucide="pizza"></i> Pizzerías</div>
+        <div class="mq-item"><i data-lucide="coffee"></i> Cafeterías</div>
+        <div class="mq-item"><i data-lucide="store"></i> Kioscos</div>
+        <div class="mq-item"><i data-lucide="shopping-bag"></i> Retail</div>
+        <div class="mq-item"><i data-lucide="utensils"></i> Restaurantes</div>
+        <div class="mq-item"><i data-lucide="ice-cream"></i> Heladerías</div>
+        <div class="mq-item"><i data-lucide="sandwich"></i> Rotiserías</div>
+        <!-- Clones -->
+        <div class="mq-item"><i data-lucide="pizza"></i> Pizzerías</div>
+        <div class="mq-item"><i data-lucide="coffee"></i> Cafeterías</div>
+        <div class="mq-item"><i data-lucide="store"></i> Kioscos</div>
+        <div class="mq-item"><i data-lucide="shopping-bag"></i> Retail</div>
+        <div class="mq-item"><i data-lucide="utensils"></i> Restaurantes</div>
+        <div class="mq-item"><i data-lucide="ice-cream"></i> Heladerías</div>
+        <div class="mq-item"><i data-lucide="sandwich"></i> Rotiserías</div>
+      </div>
+    </div>
 
-          <div class="floating-card floating-card-top">
-            <strong>Pedidos por WhatsApp</strong>
-            <span>Más simple para vender</span>
+    <!-- BENEFICIOS (BENTO GRID) -->
+    <section id="beneficios" class="section">
+      <div class="container">
+        <div class="section-header text-center gs-reveal">
+          <h2 class="section-title">El poder de tener <span class="gradient-text">tu propio sistema</span></h2>
+          <p class="section-desc">Diseñado para aplastar a la competencia y darle a tus clientes una experiencia de compra sin fricción.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Item 1: Large -->
+          <div class="bento-card bento-large glass-panel gs-reveal">
+            <div class="bento-content">
+              <i data-lucide="smartphone-nfc" class="bento-icon"></i>
+              <h3>Identidad Absoluta</h3>
+              <p>Tu logo, tus colores, tus reglas. Olvidate de las aplicaciones genéricas donde sos un número más. Acá tu marca es la protagonista indiscutida.</p>
+            </div>
+            <div class="bento-visual">
+              <div class="abstract-ring"></div>
+            </div>
           </div>
 
-          <div class="floating-card floating-card-bottom">
-            <strong>Demo disponible</strong>
-            <span>Probalo ahora</span>
+          <!-- Item 2 -->
+          <div class="bento-card glass-panel gs-reveal delay-1">
+            <div class="bento-content">
+              <i data-lucide="message-circle" class="bento-icon"></i>
+              <h3>Orden al WhatsApp</h3>
+              <p>El sistema toma el pedido y te lo envía formateado, claro y listo para preparar.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bento-card glass-panel gs-reveal delay-2">
+            <div class="bento-content">
+              <i data-lucide="qr-code" class="bento-icon"></i>
+              <h3>Ecosistema QR</h3>
+              <p>Compartí tu sistema por link o en mesas y packaging mediante QR.</p>
+            </div>
+          </div>
+
+          <!-- Item 4: Wide -->
+          <div class="bento-card bento-wide glass-panel gs-reveal">
+            <div class="bento-content row-content">
+              <div class="bc-left">
+                <i data-lucide="zap" class="bento-icon"></i>
+                <h3>Velocidad y Conversión</h3>
+                <p>Una interfaz pulida al milímetro para que el cliente compre en 3 clics desde su celular sin instalar nada.</p>
+              </div>
+              <div class="bc-right">
+                <div class="speed-graph">
+                  <div class="sg-bar" style="height: 30%"></div>
+                  <div class="sg-bar" style="height: 60%"></div>
+                  <div class="sg-bar" style="height: 100%"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BENEFICIOS -->
-    <section class="section section-light benefits-bubbles-section">
-      <div class="container">
-        <div class="section-head center">
-          <span class="benefits-mini-badge">TuPedido!</span>
-          <h2>¿Qué gana tu negocio?</h2>
-          <p class="benefits-subtitle">
-            Una forma más clara, más simple y más profesional de vender por WhatsApp.
-          </p>
+    <!-- DEMO / SCROLL PINNING (COMO FUNCIONA) -->
+    <section id="demo" class="section demo-section">
+      <div class="container demo-container">
+        
+        <div class="demo-sticky-left gs-reveal">
+          <div class="demo-badge">Live Demo</div>
+          <h2 class="section-title">La experiencia <br><span class="gradient-text">en acción.</span></h2>
+          <p class="section-desc">Mirá lo simple que es convertir un visitante en una venta real. Cada paso está optimizado para la conversión.</p>
+          
+          <a href="https://tupedidoapp.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary magnetic mt-4">
+            <span class="btn-glow"></span>
+            <span>Acceder a la Demo</span>
+            <i data-lucide="external-link"></i>
+          </a>
         </div>
 
-        <div class="benefits-bubbles-wrap">
-          <article class="benefit-bubble benefit-bubble-main">
-            <div class="benefit-bubble-icon">
-              <i class="fa-solid fa-store"></i>
-            </div>
-            <h3>Tu marca</h3>
-            <p>Logo, colores y diseño con identidad propia.</p>
-          </article>
-
-          <article class="benefit-bubble benefit-bubble-secondary">
-            <div class="benefit-bubble-icon">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <h3>Pedidos claros</h3>
-            <p>Todo llega ordenado directo a tu WhatsApp.</p>
-          </article>
-
-          <article class="benefit-bubble benefit-bubble-accent">
-            <div class="benefit-bubble-icon">
-              <i class="fa-solid fa-qrcode"></i>
-            </div>
-            <h3>Link + QR</h3>
-            <p>Compartilo en redes, flyers, packaging y cartelería.</p>
-          </article>
-        </div>
-
-        <div class="benefits-mini-row">
-          <div class="benefits-pill">
-            <i class="fa-solid fa-palette"></i>
-            <span>Diseño personalizado</span>
+        <div class="demo-scroll-right">
+          <!-- Step 1 -->
+          <div class="demo-step glass-panel gs-step">
+            <div class="step-number">01</div>
+            <h3>El cliente entra</h3>
+            <p>A través de tu link de Instagram o escaneando un QR. La carga es instantánea y se sumerge en tu catálogo visual.</p>
           </div>
-
-          <div class="benefits-pill">
-            <i class="fa-solid fa-bolt"></i>
-            <span>Más simple de usar</span>
+          <!-- Step 2 -->
+          <div class="demo-step glass-panel gs-step">
+            <div class="step-number">02</div>
+            <h3>Selecciona y Personaliza</h3>
+            <p>Agrega los productos al carrito de forma súper intuitiva. Puede ver detalles, precios e ingredientes.</p>
           </div>
-
-          <div class="benefits-pill">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <span>Optimizado para celular</span>
+          <!-- Step 3 -->
+          <div class="demo-step glass-panel gs-step">
+            <div class="step-number">03</div>
+            <h3>Completa los Datos</h3>
+            <p>Elige si es delivery o retiro, ingresa sus datos y ve los métodos de pago que configuraste (Alias, Efectivo, etc).</p>
           </div>
-
-          <div class="benefits-pill">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Mejor imagen comercial</span>
+          <!-- Step 4 -->
+          <div class="demo-step glass-panel gs-step">
+            <div class="step-number">04</div>
+            <h3>Pedido Recibido</h3>
+            <p>¡Boom! Te llega un mensaje perfecto a tu WhatsApp con el detalle exacto. Sin preguntas, solo preparar y cobrar.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- RUBROS -->
-    <section class="section section-light" id="rubros">
-      <div class="container">
-        <div class="section-head center">
-          <h2>Pensado para negocios como</h2>
-          <p>
-            Ideal para rubros que venden por WhatsApp y quieren verse mucho más profesionales.
-          </p>
-        </div>
-
-        <div class="category-grid">
-          <article class="category-card"><i class="fa-solid fa-burger"></i><span>Hamburgueserías</span></article>
-          <article class="category-card"><i class="fa-solid fa-pizza-slice"></i><span>Pizzerías</span></article>
-          <article class="category-card"><i class="fa-solid fa-bowl-food"></i><span>Rotiserías</span></article>
-          <article class="category-card"><i class="fa-solid fa-mug-hot"></i><span>Cafeterías</span></article>
-          <article class="category-card"><i class="fa-solid fa-ice-cream"></i><span>Heladerías</span></article>
-          <article class="category-card"><i class="fa-solid fa-bread-slice"></i><span>Panaderías</span></article>
-          <article class="category-card"><i class="fa-solid fa-store"></i><span>Kioscos</span></article>
-          <article class="category-card"><i class="fa-solid fa-drumstick-bite"></i><span>Carnicerías</span></article>
-          <article class="category-card"><i class="fa-solid fa-carrot"></i><span>Verdulerías</span></article>
-          <article class="category-card"><i class="fa-solid fa-leaf"></i><span>Dietéticas</span></article>
-          <article class="category-card"><i class="fa-solid fa-motorcycle"></i><span>Delivery local</span></article>
-          <article class="category-card"><i class="fa-solid fa-bag-shopping"></i><span>Retiro en local</span></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEMO / COMO FUNCIONA -->
-    <section class="section section-brand" id="funciona">
-      <div class="container">
-        <div class="section-head center white">
-          <h2>Mirá cómo funciona</h2>
-          <p>
-            Un sistema de pedidos claro, visual y pensado para vender mejor.
-          </p>
-        </div>
-
-        <div class="demo-grid demo-grid-aligned">
-          <div class="algo-card">
-            <div class="algo-frame">
-              <img
-                src="img/algoritmo.jfif"
-                alt="Flujo de uso de TuPedido"
-                class="algo-img"
-              />
-
-              <div class="algo-overlay">
-                <strong>Todo el pedido más ordenado</strong>
-                <span>
-                  El cliente elige, el sistema organiza y vos recibís todo mucho más claro.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="demo-copy-box demo-copy-box-premium">
-            <span class="demo-badge-live">
-              <span class="demo-badge-dot"></span>
-              Demo activa
-            </span>
-
-            <h3>Probá TuPedido en vivo</h3>
-
-            <p>
-              Entrá ahora, recorré la demo y mirá cómo se vería tu negocio con una
-              web app propia, moderna y lista para recibir pedidos por WhatsApp.
-            </p>
-
-            <div class="demo-highlight-list">
-              <div class="demo-highlight-item">
-                <i class="fa-solid fa-bolt"></i>
-                <span>Visual rápido y profesional</span>
-              </div>
-
-              <div class="demo-highlight-item">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>Pedidos claros al instante</span>
-              </div>
-
-              <div class="demo-highlight-item">
-                <i class="fa-solid fa-qrcode"></i>
-                <span>Ideal para compartir con link + QR</span>
-              </div>
-
-              <div class="demo-highlight-item">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span>Más simple para el cliente</span>
-              </div>
-            </div>
-
-            <div class="demo-actions demo-actions-premium">
-              <a
-                href="https://tupedidoapp.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-demo-main"
-              >
-                <span class="btn-demo-main-glow"></span>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-                <span>Ver demo funcionando</span>
-              </a>
-
-              <a
-                href="https://wa.me/5493813159106?text=Hola%20Esteban,%20vi%20la%20demo%20de%20TuPedido%20y%20quiero%20la%20m%C3%ADa"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-demo-secondary"
-              >
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>La quiero para mi negocio</span>
-              </a>
-            </div>
-
-            <div class="demo-copy-decor decor-1"></div>
-            <div class="demo-copy-decor decor-2"></div>
-            <div class="demo-copy-decor decor-3"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUE INCLUYE -->
-    <section class="section section-light" id="incluye">
-      <div class="container">
-        <div class="section-head center">
-          <h2>¿Qué incluye tu sistema?</h2>
-          <p>
-            Más que una landing: una herramienta comercial para mostrar, vender y recibir pedidos mejor.
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <i class="fa-solid fa-images"></i>
-            <h3>Catálogo visual</h3>
-            <p>Productos organizados por categorías con mejor presentación.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <h3>Carrito simple</h3>
-            <p>El cliente elige más rápido y arma su pedido de forma clara.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-brands fa-whatsapp"></i>
-            <h3>Pedido a WhatsApp</h3>
-            <p>Te llega listo, ordenado y fácil de atender.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-qrcode"></i>
-            <h3>QR personalizado</h3>
-            <p>Para compartir en mostrador, flyers, packaging o redes.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-money-bill-transfer"></i>
-            <h3>Datos de pago</h3>
-            <p>Alias, transferencia y otros datos visibles para cobrar mejor.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-palette"></i>
-            <h3>Diseño con tu marca</h3>
-            <p>Logo, colores y estética pensados para tu negocio.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-bullhorn"></i>
-            <h3>Banners y promos</h3>
-            <p>Destacá productos, promociones y novedades.</p>
-          </article>
-
-          <article class="feature-card">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <h3>Optimizado para celular</h3>
-            <p>Rápido, claro y fácil de usar desde el teléfono.</p>
-          </article>
-        </div>
       </div>
     </section>
 
     <!-- ANTES VS AHORA -->
-    <section class="section section-light before-after-section">
+    <section class="section comparison-section">
       <div class="container">
-        <div class="section-head center">
-          <h2>Antes vs ahora</h2>
-          <p>
-            La diferencia entre vender con desorden y vender con una imagen mucho más profesional.
-          </p>
+        <div class="section-header text-center gs-reveal">
+          <h2 class="section-title">Evolucioná tu <span class="gradient-text">forma de vender</span></h2>
         </div>
 
-        <div class="before-after-grid">
-          <article class="compare-card compare-bad">
-            <span class="compare-label compare-label-bad">Antes</span>
-            <h3>Todo mezclado</h3>
-            <ul>
-              <li>Mensajes desordenados</li>
-              <li>Cliente pregunta todo</li>
-              <li>Pedidos poco claros</li>
-              <li>Más tiempo para atender</li>
-              <li>Menor imagen profesional</li>
+        <div class="compare-grid">
+          <!-- BAD -->
+          <div class="compare-card compare-bad glass-panel gs-reveal">
+            <div class="compare-header">
+              <i data-lucide="x-octagon" class="icon-bad"></i>
+              <h3>El Caos del Pasado</h3>
+            </div>
+            <ul class="compare-list">
+              <li><i data-lucide="x"></i> Mensajes larguísimos y confusos</li>
+              <li><i data-lucide="x"></i> Clientes que preguntan precios a cada rato</li>
+              <li><i data-lucide="x"></i> Pedidos incompletos o mal anotados</li>
+              <li><i data-lucide="x"></i> Imagen poco profesional del negocio</li>
+              <li><i data-lucide="x"></i> Pérdida de tiempo valioso al responder</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="compare-card compare-good">
-            <span class="compare-label compare-label-good">Con TuPedido</span>
-            <h3>Todo mucho más claro</h3>
-            <ul>
-              <li>Catálogo mejor presentado</li>
-              <li>Pedido listo y ordenado</li>
-              <li>Link + QR para compartir</li>
-              <li>Mejor experiencia para el cliente</li>
-              <li>Tu negocio se ve más fuerte</li>
+          <!-- GOOD -->
+          <div class="compare-card compare-good glass-panel gs-reveal delay-1">
+            <div class="good-glow"></div>
+            <div class="compare-header">
+              <i data-lucide="check-circle" class="icon-good"></i>
+              <h3>Con TuPedido!</h3>
+            </div>
+            <ul class="compare-list">
+              <li><i data-lucide="check"></i> Catálogo visual siempre actualizado</li>
+              <li><i data-lucide="check"></i> El cliente arma su pedido solo y rápido</li>
+              <li><i data-lucide="check"></i> Mensaje perfecto y estructurado a WhatsApp</li>
+              <li><i data-lucide="check"></i> Imagen tecnológica y premium</li>
+              <li><i data-lucide="check"></i> Tu tiempo se dedica solo a despachar y cobrar</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DONDE USAR QR -->
-    <section class="section section-light qr-uses-section">
-      <div class="container">
-        <div class="section-head center">
-          <h2>¿Dónde podés usar tu QR?</h2>
-          <p>
-            Tu sistema también funciona como herramienta de difusión para que más gente llegue a tu negocio.
-          </p>
-        </div>
-
-        <div class="use-grid">
-          <div class="use-pill"><i class="fa-solid fa-shop"></i><span>Mostrador</span></div>
-          <div class="use-pill"><i class="fa-solid fa-utensils"></i><span>Mesas</span></div>
-          <div class="use-pill"><i class="fa-solid fa-file-lines"></i><span>Flyers</span></div>
-          <div class="use-pill"><i class="fa-solid fa-box-open"></i><span>Packaging</span></div>
-          <div class="use-pill"><i class="fa-solid fa-tags"></i><span>Stickers</span></div>
-          <div class="use-pill"><i class="fa-solid fa-bag-shopping"></i><span>Bolsas</span></div>
-          <div class="use-pill"><i class="fa-solid fa-id-card"></i><span>Tarjetas</span></div>
-          <div class="use-pill"><i class="fa-brands fa-instagram"></i><span>Instagram</span></div>
-          <div class="use-pill"><i class="fa-brands fa-whatsapp"></i><span>Estados de WhatsApp</span></div>
-          <div class="use-pill"><i class="fa-solid fa-sign-hanging"></i><span>Cartelería</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESO -->
-    <section class="section section-light process-section">
-      <div class="container">
-        <div class="section-head center">
-          <h2>¿Cómo empezamos?</h2>
-          <p>
-            Un proceso simple para que tu negocio tenga su sistema listo para vender.
-          </p>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card">
-            <span class="process-step">1</span>
-            <h3>Me contás tu negocio</h3>
-            <p>Rubro, estilo, colores, productos y forma de venta.</p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-step">2</span>
-            <h3>Armamos tu diseño</h3>
-            <p>Personalizamos la estructura con tu identidad visual.</p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-step">3</span>
-            <h3>Cargamos la base</h3>
-            <p>Productos, datos de pago, accesos y categorías principales.</p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-step">4</span>
-            <h3>Te entrego tu link + QR</h3>
-            <p>Queda listo para compartir y empezar a recibir pedidos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE EL SISTEMA -->
-    <section class="section section-light about-section">
-      <div class="container about-grid">
-        <div class="about-image-wrap">
-          <div class="about-circle"></div>
-
-          <img
-            src="img/app1.jpg"
-            alt="Sistema TuPedido"
-            class="about-image"
-          />
-        </div>
-
-        <div class="about-copy">
-          <h2>Tu sistema propio para vender mejor</h2>
-
-          <p>
-            No dependés de una app genérica. Tenés una página pensada para tu marca,
-            con tus productos, tus datos de pago, tus categorías y tu estilo visual.
-          </p>
-
-          <p>
-            Además, TuPedido no solo sirve para tomar pedidos: también funciona como
-            herramienta de difusión para compartir por Instagram, WhatsApp, QR,
-            packaging, stickers o cartelería.
-          </p>
-
-          <div class="about-points">
-            <div class="about-point">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Sin comisiones por pedido</span>
-            </div>
-            <div class="about-point">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Tu marca por delante</span>
-            </div>
-            <div class="about-point">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Más orden para vender</span>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PLANES -->
-    <section class="section section-brand pricing-section" id="planes">
+    <section id="planes" class="section pricing-section">
       <div class="container">
-        <div class="section-head center white">
-          <h2>Planes y mantenimiento</h2>
-          <p>
-            Empezás con una implementación inicial y después elegís el acompañamiento
-            que mejor te sirva.
-          </p>
+        <div class="section-header text-center gs-reveal">
+          <h2 class="section-title">Inversión y <span class="gradient-text">Mantenimiento</span></h2>
+          <p class="section-desc">Costos transparentes. Empezá con la plataforma y elegí el nivel de soporte que tu crecimiento exija.</p>
         </div>
 
         <div class="pricing-grid">
-          <article class="price-card featured">
-            <span class="plan-label">Implementación inicial</span>
-            <h3>Tu sistema listo para vender</h3>
-            <div class="price">$50.000</div>
-
-            <ul>
-              <li>Diseño personalizado</li>
-              <li>Carga base de productos</li>
-              <li>Datos de pago visibles</li>
-              <li>Botón directo a WhatsApp</li>
-              <li>QR de acceso</li>
+          
+          <!-- Plan Setup -->
+          <div class="price-card glass-panel setup-card gs-reveal">
+            <div class="plan-tag">Único Pago</div>
+            <h3>Implementación Inicial</h3>
+            <div class="price-amount">$50.000</div>
+            <p class="price-desc">Tu sistema llave en mano, listo para operar.</p>
+            <ul class="price-features">
+              <li><i data-lucide="check"></i> Diseño con tu identidad visual</li>
+              <li><i data-lucide="check"></i> Carga base de catálogo</li>
+              <li><i data-lucide="check"></i> Configuración de WhatsApp y pagos</li>
+              <li><i data-lucide="check"></i> Generación de QR oficial</li>
             </ul>
+            <a href="https://wa.me/5493813159106?text=Hola,%20quiero%20empezar%20con%20la%20implementaci%C3%B3n%20inicial%20de%20TuPedido" target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Arrancar Ya</a>
+          </div>
 
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20empezar%20con%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary btn-full"
-            >
-              Quiero empezar
-            </a>
-          </article>
-
-          <article class="price-card">
-            <span class="plan-label">Pack 1</span>
-            <h3>Mantenimiento básico</h3>
-            <div class="price">$5.000<span>/mes</span></div>
-
-            <ul>
-              <li>Cambios simples</li>
-              <li>Actualización de datos</li>
-              <li>Banners y textos</li>
-              <li>Soporte básico</li>
+          <!-- Pack 1 -->
+          <div class="price-card glass-panel gs-reveal delay-1">
+            <h3>Pack Básico</h3>
+            <div class="price-amount">$5.000<span>/mes</span></div>
+            <p class="price-desc">Soporte esencial mensual.</p>
+            <ul class="price-features">
+              <li><i data-lucide="check"></i> Cambios simples de texto/precio</li>
+              <li><i data-lucide="check"></i> Banners básicos</li>
+              <li><i data-lucide="check"></i> Soporte por correo/wa</li>
             </ul>
+            <a href="https://wa.me/5493813159106?text=Hola,%20quiero%20el%20Pack%20B%C3%A1sico" target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Elegir Básico</a>
+          </div>
 
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20el%20pack%20b%C3%A1sico%20de%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-light-dark btn-full"
-            >
-              Elegir pack
-            </a>
-          </article>
-
-          <article class="price-card">
-            <span class="plan-label">Pack 2</span>
-            <h3>Mantenimiento medio</h3>
-            <div class="price">$10.000<span>/mes</span></div>
-
-            <ul>
-              <li>Más cambios mensuales</li>
-              <li>Actualización de productos</li>
-              <li>Promos y secciones</li>
-              <li>Soporte preferencial</li>
+          <!-- Pack 2 (Premium Highlight) -->
+          <div class="price-card glass-panel premium-card gs-reveal delay-2">
+            <div class="premium-glow"></div>
+            <div class="plan-tag tag-glow">Recomendado</div>
+            <h3>Pack Medio</h3>
+            <div class="price-amount">$10.000<span>/mes</span></div>
+            <p class="price-desc">El equilibrio perfecto para negocios activos.</p>
+            <ul class="price-features">
+              <li><i data-lucide="check"></i> Múltiples cambios mensuales</li>
+              <li><i data-lucide="check"></i> Actualización de fotos de productos</li>
+              <li><i data-lucide="check"></i> Creación de secciones promo</li>
+              <li><i data-lucide="check"></i> Soporte preferencial</li>
             </ul>
+            <a href="https://wa.me/5493813159106?text=Hola,%20quiero%20el%20Pack%20Medio" target="_blank" class="btn btn-primary w-full magnetic mt-auto">Elegir Medio</a>
+          </div>
 
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20el%20pack%20medio%20de%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-light-dark btn-full"
-            >
-              Elegir pack
-            </a>
-          </article>
-
-          <article class="price-card">
-            <span class="plan-label">Pack 3</span>
-            <h3>Mantenimiento full</h3>
-            <div class="price">$15.000<span>/mes</span></div>
-
-            <ul>
-              <li>Cambios frecuentes</li>
-              <li>Mayor acompañamiento</li>
-              <li>Actualización constante</li>
-              <li>Más foco comercial</li>
+          <!-- Pack 3 -->
+          <div class="price-card glass-panel gs-reveal delay-3">
+            <h3>Pack Full</h3>
+            <div class="price-amount">$15.000<span>/mes</span></div>
+            <p class="price-desc">Para un negocio dinámico y exigente.</p>
+            <ul class="price-features">
+              <li><i data-lucide="check"></i> Modificaciones frecuentes y sin límite</li>
+              <li><i data-lucide="check"></i> Acompañamiento comercial</li>
+              <li><i data-lucide="check"></i> Diseño de banners premium</li>
+              <li><i data-lucide="check"></i> Prioridad absoluta</li>
             </ul>
+            <a href="https://wa.me/5493813159106?text=Hola,%20quiero%20el%20Pack%20Full" target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Elegir Full</a>
+          </div>
 
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20el%20pack%20full%20de%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-light-dark btn-full"
-            >
-              Elegir pack
-            </a>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="section section-light final-cta-section">
-      <div class="container">
-        <div class="final-cta-box">
-          <h2>Tu negocio también puede tener su propio sistema</h2>
-          <p>
-            Mostrate mejor, compartí tu QR y recibí pedidos mucho más claros por WhatsApp.
-          </p>
-
-          <div class="final-cta-actions">
-            <a
-              href="https://tupedidoapp.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Ver demo
-            </a>
-
-            <a
-              href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20mi%20TuPedido"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-light-dark"
-            >
-              Pedir el mío
-            </a>
-          </div>
+    <!-- FINAL CTA -->
+    <section class="section final-cta">
+      <div class="container text-center gs-reveal">
+        <h2 class="massive-text">¿Listo para dar el <br><span class="gradient-text">salto digital?</span></h2>
+        <p class="final-desc">Tus clientes se merecen la mejor experiencia. Tu negocio se merece el orden.</p>
+        <div class="final-actions">
+          <a href="https://tupedidoapp.netlify.app/" target="_blank" class="btn btn-primary btn-massive magnetic">
+            <span class="btn-glow"></span>
+            Probar Demo Interactiva
+          </a>
+          <a href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20mi%20TuPedido" target="_blank" class="btn btn-secondary magnetic">
+            Contactar a un Asesor
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <a
-    href="https://wa.me/5493813159106?text=Hola%20Esteban,%20quiero%20info%20de%20TuPedido"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="floating-wa"
-    aria-label="WhatsApp"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-mark">TP</div>
+        <span class="brand-name">TuPedido!</span>
+        <p>Potenciando negocios físicos en el mundo digital.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#demo">Demo</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#planes">Planes</a>
+      </div>
+      <div class="footer-legal">
+        <span>&copy; 2026 TuPedido!. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5493813159106?text=Hola,%20tengo%20una%20consulta%20sobre%20TuPedido" target="_blank" class="fab-wa magnetic" aria-label="WhatsApp">
+    <i data-lucide="message-circle"></i>
   </a>
 
+  <!-- SCRIPTS -->
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  
+  <!-- App logic -->
   <script src="app.js"></script>
 </body>
 </html>
