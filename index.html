@@ -350,14 +350,56 @@
           <p class="section-desc">Costos transparentes y sin sorpresas. Empezá hoy mismo con tu propia plataforma de pedidos.</p>
         </div>
 
+        <!-- INTERACTIVE COMMISSION CALCULATOR -->
+        <div class="calculator-container glass-panel gs-reveal">
+          <div class="calc-header">
+            <i data-lucide="calculator" class="calc-icon"></i>
+            <h3>Calculadora de Ahorro en Comisiones</h3>
+            <p>Descubrí cuánto dinero estás regalando a plataformas de delivery tradicionales (20% comisión promedio) y cuánto recuperás conservando el 100% de tus ventas con TuPedido!</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="calc-control">
+              <label for="sales-range">Tus ventas estimadas mensuales por delivery:</label>
+              <div class="sales-input-wrapper">
+                <span class="currency-symbol">$</span>
+                <span id="sales-value-display">500.000</span>
+              </div>
+              <input type="range" id="sales-range" min="100000" max="3000000" step="50000" value="500000" class="range-slider">
+              <div class="range-labels">
+                <span>$100.000</span>
+                <span>$3.000.000</span>
+              </div>
+            </div>
+            
+            <div class="calc-results">
+              <div class="result-box box-loss">
+                <span class="result-title">Pérdida en Comisiones (20%)</span>
+                <span class="result-amount" id="comission-loss">$100.000</span>
+                <span class="result-desc">Dinero que se quedan otros</span>
+              </div>
+              
+              <div class="result-box box-saving highlight-saving">
+                <div class="saving-glow"></div>
+                <span class="result-title">Tu Ahorro con TuPedido!</span>
+                <span class="result-amount" id="clean-savings">$90.000</span>
+                <span class="result-desc">¡Vuelve directo a tu bolsillo!*</span>
+              </div>
+            </div>
+          </div>
+          <div class="calc-footer">
+            <span>*Cálculo estimado mensualmente considerando la suscripción fija de $10 USD. Conservás el 100% de lo que vendés.</span>
+          </div>
+        </div>
+
         <div class="pricing-grid">
 
           <!-- Plan Setup -->
           <div class="price-card glass-panel setup-card gs-reveal">
             <div class="plan-tag tag-glow">Único Pago</div>
             <h3>Setup Personalizado</h3>
-            <div class="price-amount">$150.000</div>
-            <p class="price-desc">Tu sistema llave en mano, completamente personalizado con tu marca.</p>
+            <div class="price-amount">$100<span> USD</span></div>
+            <p class="price-desc">Tu sistema llave en mano, completamente personalizado con tu marca y listo para operar.</p>
             <ul class="price-features">
               <li><i data-lucide="check"></i> Diseño a medida con tus logos y colores</li>
               <li><i data-lucide="check"></i> Carga base de tu menú o catálogo inicial</li>
@@ -365,7 +407,7 @@
               <li><i data-lucide="check"></i> Generación de códigos QR oficiales</li>
               <li><i data-lucide="check"></i> Capacitación de uso rápida y simple</li>
             </ul>
-            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado%20por%20$150.000"
+            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado%20por%20$100%20USD"
               target="_blank" class="btn btn-primary w-full magnetic mt-auto">Arrancar Mi Setup</a>
           </div>
 
@@ -374,8 +416,8 @@
             <div class="premium-glow"></div>
             <div class="plan-tag">Mantenimiento</div>
             <h3>Soporte y Nube</h3>
-            <div class="price-amount">$7<span>/mes</span></div>
-            <p class="price-desc">Garantía de funcionamiento, actualizaciones continuas y nube.</p>
+            <div class="price-amount">$10<span> USD/mes</span></div>
+            <p class="price-desc">Garantía de funcionamiento, actualizaciones continuas y hosting de alta velocidad.</p>
             <ul class="price-features">
               <li><i data-lucide="check"></i> Servidor en la nube ultrarrápido y seguro</li>
               <li><i data-lucide="check"></i> Soporte técnico prioritario por WhatsApp</li>
@@ -383,7 +425,7 @@
               <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas del sistema</li>
               <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas (0% fee)</li>
             </ul>
-            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20de%20$7%20USD%20para%20mi%20tienda"
+            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20de%20$10%20USD%20para%20mi%20tienda"
               target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Activar Plan Mensual</a>
           </div>
 

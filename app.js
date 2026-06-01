@@ -285,4 +285,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ==========================================================================
+     COMMISSION CALCULATOR LOGIC
+     ========================================================================== */
+  const salesRange = document.getElementById('sales-range');
+  const salesValueDisplay = document.getElementById('sales-value-display');
+  const commissionLossText = document.getElementById('comission-loss');
+  const cleanSavingsText = document.getElementById('clean-savings');
+  
+  if (salesRange) {
+    const updateCalculator = () => {
+      const sales = parseInt(salesRange.value);
+      
+      // Formatear y actualizar display de ventas
+      salesValueDisplay.innerText = sales.toLocaleString('es-ES');
+      
+      // Comisión de plataformas (20%)
+      const commissionLoss = Math.round(sales * 0.20);
+      commissionLossText.innerText = '$' + commissionLoss.toLocaleString('es-ES');
+      
+      // Ahorro estimado (Comisión - $10 USD a tipo de cambio estimado ~1000)
+      const usdExchange = 1000;
+      const fixedMonthlyCost = 10 * usdExchange;
+      const savings = Math.max(0, commissionLoss - fixedMonthlyCost);
+      cleanSavingsText.innerText = '$' + savings.toLocaleString('es-ES');
+    };
+    
+    salesRange.addEventListener('input', updateCalculator);
+    // Ejecutar inicialización
+    updateCalculator();
+  }
+
 });
