@@ -26,15 +26,20 @@
 
 <body class="loading-state">
 
-  <!-- SPLASH / PRELOADER -->
-  <div id="splash" class="splash-screen">
-    <div class="splash-content">
-      <div class="splash-brand">
-        <div class="splash-icon">TP</div>
-        <div class="splash-text">TuPedido!</div>
+  <!-- SPLASH / PRELOADER CINEMATICO (ESTILO NETFLIX) -->
+  <div id="splash" class="splash-screen splash-cinematic">
+    <div class="splash-content-wrapper">
+      <!-- Phrases Sequence -->
+      <div class="splash-phrases">
+        <h2 class="splash-phrase phrase-1">Tu Marca.</h2>
+        <h2 class="splash-phrase phrase-2">Tus Pedidos.</h2>
+        <h2 class="splash-phrase phrase-3">Sin Comisiones.</h2>
       </div>
-      <div class="splash-progress">
-        <div class="progress-bar"></div>
+      <!-- Cinematic Brand Logo -->
+      <div class="splash-brand-intro">
+        <div class="logo-glow-aura"></div>
+        <img src="img/LOGOOK.jfif" alt="TuPedido! Logo" class="splash-logo-netflix" />
+        <h1 class="splash-brand-title">TuPedido!</h1>
       </div>
     </div>
   </div>
@@ -49,7 +54,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-container glass-island">
       <a href="#inicio" class="brand magnetic">
-        <div class="brand-mark">TP</div>
+        <img src="img/LOGOOK.jfif" alt="TuPedido! Logo" class="brand-logo-img" />
         <span class="brand-name">TuPedido!</span>
       </a>
 
@@ -342,72 +347,44 @@
       <div class="container">
         <div class="section-header text-center gs-reveal">
           <h2 class="section-title">Inversión y <span class="gradient-text">Mantenimiento</span></h2>
-          <p class="section-desc">Costos transparentes. Empezá con la plataforma y elegí el nivel de soporte que tu
-            crecimiento exija.</p>
+          <p class="section-desc">Costos transparentes y sin sorpresas. Empezá hoy mismo con tu propia plataforma de pedidos.</p>
         </div>
 
         <div class="pricing-grid">
 
           <!-- Plan Setup -->
           <div class="price-card glass-panel setup-card gs-reveal">
-            <div class="plan-tag">Único Pago</div>
-            <h3>Implementación Inicial</h3>
+            <div class="plan-tag tag-glow">Único Pago</div>
+            <h3>Setup Personalizado</h3>
             <div class="price-amount">$150.000</div>
-            <p class="price-desc">Tu sistema llave en mano, listo para operar.</p>
+            <p class="price-desc">Tu sistema llave en mano, completamente personalizado con tu marca.</p>
             <ul class="price-features">
-              <li><i data-lucide="check"></i> Diseño con tu identidad visual</li>
-              <li><i data-lucide="check"></i> Carga base de catálogo</li>
-              <li><i data-lucide="check"></i> Configuración de WhatsApp y pagos</li>
-              <li><i data-lucide="check"></i> Generación de QR oficial</li>
+              <li><i data-lucide="check"></i> Diseño a medida con tus logos y colores</li>
+              <li><i data-lucide="check"></i> Carga base de tu menú o catálogo inicial</li>
+              <li><i data-lucide="check"></i> Configuración de WhatsApp y métodos de pago</li>
+              <li><i data-lucide="check"></i> Generación de códigos QR oficiales</li>
+              <li><i data-lucide="check"></i> Capacitación de uso rápida y simple</li>
             </ul>
-            <a href="https://wa.me/5493814767643?text=Hola,%20quiero%20empezar%20con%20la%20implementaci%C3%B3n%20inicial%20de%20TuPedido"
-              target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Arrancar Ya</a>
+            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado%20por%20$150.000"
+              target="_blank" class="btn btn-primary w-full magnetic mt-auto">Arrancar Mi Setup</a>
           </div>
 
-          <!-- Pack 1 -->
-          <div class="price-card glass-panel gs-reveal delay-1">
-            <h3>Pack Básico</h3>
-            <div class="price-amount">$24.999<span>/mes</span></div>
-            <p class="price-desc">Soporte esencial mensual.</p>
-            <ul class="price-features">
-              <li><i data-lucide="check"></i> Cambios simples de texto/precio</li>
-              <li><i data-lucide="check"></i> Banners básicos</li>
-              <li><i data-lucide="check"></i> Soporte por correo/wa</li>
-            </ul>
-            <a href="https://wa.me/5493814767643?text=Hola,%20quiero%20el%20Pack%20B%C3%A1sico" target="_blank"
-              class="btn btn-secondary w-full magnetic mt-auto">Elegir Básico</a>
-          </div>
-
-          <!-- Pack 2 (Premium Highlight) -->
-          <div class="price-card glass-panel premium-card gs-reveal delay-2">
+          <!-- Mantenimiento Mensual -->
+          <div class="price-card glass-panel premium-card gs-reveal delay-1">
             <div class="premium-glow"></div>
-            <div class="plan-tag tag-glow">Recomendado</div>
-            <h3>Pack Medio</h3>
-            <div class="price-amount">$39.999<span>/mes</span></div>
-            <p class="price-desc">El equilibrio perfecto para negocios activos.</p>
+            <div class="plan-tag">Mantenimiento</div>
+            <h3>Soporte y Nube</h3>
+            <div class="price-amount">$7<span>/mes</span></div>
+            <p class="price-desc">Garantía de funcionamiento, actualizaciones continuas y nube.</p>
             <ul class="price-features">
-              <li><i data-lucide="check"></i> Múltiples cambios mensuales</li>
-              <li><i data-lucide="check"></i> Actualización de fotos de productos</li>
-              <li><i data-lucide="check"></i> Creación de secciones promo</li>
-              <li><i data-lucide="check"></i> Soporte preferencial</li>
+              <li><i data-lucide="check"></i> Servidor en la nube ultrarrápido y seguro</li>
+              <li><i data-lucide="check"></i> Soporte técnico prioritario por WhatsApp</li>
+              <li><i data-lucide="check"></i> Cambios de precios, textos y productos ilimitados</li>
+              <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas del sistema</li>
+              <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas (0% fee)</li>
             </ul>
-            <a href="https://wa.me/5493814767643?text=Hola,%20quiero%20el%20Pack%20Medio" target="_blank"
-              class="btn btn-primary w-full magnetic mt-auto">Elegir Medio</a>
-          </div>
-
-          <!-- Pack 3 -->
-          <div class="price-card glass-panel gs-reveal delay-3">
-            <h3>Pack Full</h3>
-            <div class="price-amount">$54.999<span>/mes</span></div>
-            <p class="price-desc">Para un negocio dinámico y exigente.</p>
-            <ul class="price-features">
-              <li><i data-lucide="check"></i> Modificaciones frecuentes y sin límite</li>
-              <li><i data-lucide="check"></i> Acompañamiento comercial</li>
-              <li><i data-lucide="check"></i> Diseño de banners premium</li>
-              <li><i data-lucide="check"></i> Prioridad absoluta</li>
-            </ul>
-            <a href="https://wa.me/5493814767643?text=Hola,%20quiero%20el%20Pack%20Full" target="_blank"
-              class="btn btn-secondary w-full magnetic mt-auto">Elegir Full</a>
+            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20de%20$7%20USD%20para%20mi%20tienda"
+              target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Activar Plan Mensual</a>
           </div>
 
         </div>
@@ -437,7 +414,7 @@
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-brand">
-        <div class="brand-mark">TP</div>
+        <img src="img/LOGOOK.jfif" alt="TuPedido! Logo" class="brand-logo-img" />
         <span class="brand-name">TuPedido!</span>
         <p>Potenciando negocios físicos en el mundo digital.</p>
       </div>

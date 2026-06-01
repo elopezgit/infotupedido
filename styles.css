@@ -5,21 +5,26 @@
 ========================================================= */
 
 :root {
-  /* Core Colors */
-  --bg-deep: #020205;
-  --bg-panel: rgba(15, 15, 20, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(255, 255, 255, 0.2);
+  /* Core Colors matching LOGOOK.jfif - Premium Light Theme */
+  --bg-deep: #f8f9fd; /* Clean light gray-blue, ultra-premium */
+  --bg-panel: rgba(255, 255, 255, 0.65); /* Translucent pure white glass panel */
+  --glass-border: rgba(15, 14, 72, 0.08); /* Subtle dark border for structure */
+  --glass-border-hover: rgba(253, 36, 123, 0.25); /* Soft pink highlight on hover */
   
-  /* Accents / Neons */
-  --neon-cyan: #00f0ff;
-  --neon-purple: #7000ff;
-  --neon-blue: #003cff;
-  --gradient-main: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue), var(--neon-purple));
+  /* Accents / Neons matching LOGOOK.jfif */
+  --neon-orange: #fd8c02;
+  --neon-pink: #fd247b;
+  --neon-cyan: #02baee;
+  --neon-blue: #016ded;
+  --neon-green: #a5d200;
   
-  /* Text */
-  --text-main: #ffffff;
-  --text-muted: #8a8d9b;
+  /* Elegant gradient transitioning between signature colors */
+  --gradient-main: linear-gradient(135deg, var(--neon-orange), var(--neon-pink), var(--neon-cyan));
+  --gradient-glow: linear-gradient(135deg, rgba(253, 140, 2, 0.06), rgba(253, 36, 123, 0.06), rgba(2, 186, 238, 0.06));
+  
+  /* Text - Optimised for premium light background */
+  --text-main: #0f0e48; /* Deep elegant logo-navy for high readability */
+  --text-muted: #5b627a; /* Muted slate blue-gray */
   
   /* Typography */
   --font-sans: 'Inter', sans-serif;
@@ -70,16 +75,16 @@ body {
 .ambient-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(150px);
+  filter: blur(180px);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .glow-1 {
   top: -10%; left: -10%;
   width: 600px; height: 600px;
-  background: var(--neon-purple);
+  background: var(--neon-pink);
   animation: float 15s infinite alternate ease-in-out;
 }
 .glow-2 {
@@ -139,7 +144,7 @@ body {
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid var(--glass-border);
   border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(15, 14, 72, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.65);
   transition: var(--transition-slow);
 }
 
@@ -232,26 +237,91 @@ body {
   align-items: center;
   gap: 30px;
 }
-.splash-brand {
+/* =========================
+   SPLASH SCREEN CINEMATICO (ESTILO NETFLIX)
+ ========================= */
+.splash-cinematic {
+  position: fixed;
+  inset: 0;
+  background: #050414; /* Deep cinematic black-navy for dramatic contrast */
+  z-index: 10000;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  overflow: hidden;
 }
-.splash-icon {
-  width: 60px; height: 60px;
-  background: var(--gradient-main);
-  border-radius: 16px;
-  display: grid; place-items: center;
+.splash-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splash-phrases {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.splash-phrase {
+  position: absolute;
   font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--bg-deep);
-}
-.splash-text {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 800;
+  opacity: 0;
+  transform: scale(0.85);
   letter-spacing: -0.02em;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  filter: drop-shadow(0 10px 30px rgba(253, 36, 123, 0.25));
+}
+
+.splash-brand-intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+}
+.logo-glow-aura {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 140, 2, 0.4) 0%, rgba(253, 36, 123, 0.3) 40%, rgba(2, 186, 238, 0) 70%);
+  filter: blur(40px);
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0.5);
+}
+.splash-logo-netflix {
+  width: 180px;
+  height: 180px;
+  border-radius: 36px;
+  object-fit: contain;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(253, 36, 123, 0.35);
+  transform-origin: center center;
+}
+.splash-brand-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  text-shadow: 0 10px 30px rgba(15, 14, 72, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
 }
 .splash-progress {
   width: 250px;
@@ -288,39 +358,42 @@ body {
   width: 90%;
   max-width: 1100px;
   padding: 12px 24px;
-  background: rgba(15, 15, 20, 0.4);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
   border-radius: 100px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(15, 14, 72, 0.06);
   transition: padding 0.4s ease, max-width 0.4s ease;
 }
 
 .navbar.scrolled .glass-island {
   padding: 10px 24px;
-  background: rgba(10, 10, 15, 0.7);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(15, 14, 72, 0.1);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
-.brand-mark {
-  width: 32px; height: 32px;
-  border-radius: 10px;
-  background: var(--text-main);
-  color: var(--bg-deep);
-  font-family: var(--font-display);
-  font-weight: 800;
-  display: grid; place-items: center;
-  font-size: 0.9rem;
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-fast);
+}
+.brand:hover .brand-logo-img {
+  transform: scale(1.08) rotate(-3deg);
 }
 .brand-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   letter-spacing: -0.02em;
 }
 
@@ -362,7 +435,7 @@ body {
 /* Mobile Nav */
 .mobile-menu {
   position: fixed; inset: 0;
-  background: rgba(2, 2, 5, 0.95);
+  background: rgba(248, 249, 253, 0.98);
   backdrop-filter: blur(20px);
   z-index: 999;
   display: flex; align-items: center; justify-content: center;
@@ -497,9 +570,9 @@ body {
   height: 650px;
   border-radius: 40px;
   padding: 15px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 2px 20px rgba(255,255,255,0.05);
-  background: linear-gradient(180deg, rgba(30,30,40,0.6) 0%, rgba(10,10,15,0.8) 100%);
+  border: 1px solid rgba(15, 14, 72, 0.08);
+  box-shadow: 0 30px 60px rgba(15, 14, 72, 0.12), inset 0 2px 20px rgba(255,255,255,0.8);
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(240,242,248,0.9) 100%);
   position: relative;
   z-index: 2;
   transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
@@ -507,15 +580,16 @@ body {
 }
 
 .mockup-screen {
-  background: #000;
+  background: #ffffff;
   width: 100%; height: 100%;
   border-radius: 30px;
   overflow: hidden;
   padding: 20px;
   display: flex; flex-direction: column; gap: 15px;
+  border: 1px solid rgba(15, 14, 72, 0.05);
 }
-.mockup-nav { height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; }
-.mockup-item { height: 80px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+.mockup-nav { height: 40px; background: rgba(15, 14, 72, 0.05); border-radius: 10px; }
+.mockup-item { height: 80px; background: rgba(15, 14, 72, 0.03); border-radius: 16px; }
 .mockup-btn { height: 50px; background: var(--gradient-main); border-radius: 25px; margin-top: auto; }
 
 .float-card {
@@ -570,7 +644,7 @@ body {
   padding: 40px 0;
   border-top: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
-  background: rgba(10, 10, 15, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   transform: rotate(-2deg) scale(1.05);
 }
 .marquee-track {
@@ -685,7 +759,7 @@ body {
    DEMO / PINNING SECTION
 ========================= */
 .demo-section {
-  background: #000;
+  background: #f1f3f9;
   border-top: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
 }
@@ -722,7 +796,7 @@ body {
 }
 .step-number {
   font-family: var(--font-display); font-size: 4rem; font-weight: 900;
-  color: rgba(255,255,255,0.1); line-height: 1; margin-bottom: 20px;
+  color: rgba(15, 14, 72, 0.08); line-height: 1; margin-bottom: 20px;
 }
 .demo-step h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 15px; }
 .demo-step p { color: var(--text-muted); font-size: 1.1rem; }
@@ -744,16 +818,16 @@ body {
   padding: 50px 40px; position: relative; overflow: hidden;
 }
 .compare-bad {
-  background: rgba(255, 0, 0, 0.02);
-  border: 1px solid rgba(255,0,0,0.1);
+  background: rgba(255, 70, 70, 0.04);
+  border: 1px solid rgba(255, 70, 70, 0.15);
 }
 .compare-good {
-  background: rgba(0, 255, 128, 0.02);
-  border: 1px solid rgba(0, 255, 128, 0.2);
+  background: rgba(10, 200, 100, 0.04);
+  border: 1px solid rgba(10, 200, 100, 0.2);
 }
 .good-glow {
   position: absolute; top: -50px; right: -50px; width: 200px; height: 200px;
-  background: rgba(0, 255, 128, 0.15); filter: blur(50px);
+  background: rgba(10, 200, 100, 0.12); filter: blur(50px);
 }
 .compare-header {
   display: flex; align-items: center; gap: 15px; margin-bottom: 30px;
@@ -776,26 +850,46 @@ body {
    PRICING
 ========================= */
 .pricing-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .price-card {
-  padding: 40px 30px; display: flex; flex-direction: column;
-  position: relative; overflow: hidden;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  transition: transform var(--transition-slow), border-color var(--transition-fast), box-shadow var(--transition-slow);
+}
+.price-card:hover {
+  transform: translateY(-8px);
 }
 .setup-card {
-  border: 1px dashed var(--glass-border-hover);
+  border: 1px solid var(--neon-orange);
+  box-shadow: 0 15px 40px rgba(253, 140, 2, 0.08);
+}
+.setup-card:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 0 20px 50px rgba(253, 36, 123, 0.15);
 }
 .premium-card {
   border-color: var(--neon-cyan);
-  transform: scale(1.05);
-  box-shadow: 0 20px 50px rgba(0, 240, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(2, 186, 238, 0.08);
+}
+.premium-card:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 20px 50px rgba(1, 109, 237, 0.15);
 }
 .premium-glow {
   position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,240,255,0.05), transparent); pointer-events: none;
 }
 .plan-tag {
   display: inline-block; padding: 4px 12px; border-radius: 100px;
-  background: rgba(255,255,255,0.1); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  background: rgba(15, 14, 72, 0.06); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
   margin-bottom: 20px; align-self: flex-start;
 }
 .tag-glow { background: var(--gradient-main); color: #000; }
@@ -810,8 +904,7 @@ body {
 .price-features i { color: var(--neon-cyan); width: 18px; height: 18px; flex-shrink: 0; }
 
 @media (max-width: 1200px) {
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .premium-card { transform: scale(1); }
+  .pricing-grid { gap: 24px; }
 }
 @media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; }
@@ -823,7 +916,7 @@ body {
 .final-cta {
   padding: 150px 0;
   position: relative;
-  background: radial-gradient(circle at center, rgba(112, 0, 255, 0.1), transparent 60%);
+  background: radial-gradient(circle at center, rgba(253, 36, 123, 0.08), transparent 60%);
 }
 .massive-text {
   font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); font-weight: 900;
@@ -838,7 +931,7 @@ body {
 
 .footer {
   border-top: 1px solid var(--glass-border);
-  padding: 60px 0; background: #000;
+  padding: 60px 0; background: #ffffff;
 }
 .footer-content {
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px;

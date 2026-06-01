@@ -34,30 +34,89 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.ticker.lagSmoothing(0);
 
   /* ==========================================================================
-     PRELOADER & HERO REVEAL TIMELINE
+     CINEMATIC SPLASH / PRELOADER (ESTILO NETFLIX ENTRADA)
      ========================================================================== */
   const tl = gsap.timeline();
   
-  // Animar barra de progreso
-  tl.to('.progress-bar', { width: '100%', duration: 1.5, ease: 'power3.inOut' })
-    // Desaparecer splash
-    .to('.splash-screen', { yPercent: -100, duration: 1, ease: 'power4.inOut' })
+  tl
+    // 1. Frase 1: "Tu Marca."
+    .fromTo('.phrase-1', 
+      { opacity: 0, scale: 0.8 }, 
+      { opacity: 1, scale: 1.1, duration: 1.0, ease: 'power3.out' }
+    )
+    .to('.phrase-1', { opacity: 0, scale: 1.25, duration: 0.35, ease: 'power3.in', delay: 0.2 })
+    
+    // 2. Frase 2: "Tus Pedidos."
+    .fromTo('.phrase-2', 
+      { opacity: 0, scale: 0.8 }, 
+      { opacity: 1, scale: 1.1, duration: 1.0, ease: 'power3.out' }
+    )
+    .to('.phrase-2', { opacity: 0, scale: 1.25, duration: 0.35, ease: 'power3.in', delay: 0.2 })
+    
+    // 3. Frase 3: "Sin Comisiones."
+    .fromTo('.phrase-3', 
+      { opacity: 0, scale: 0.8 }, 
+      { opacity: 1, scale: 1.1, duration: 1.0, ease: 'power3.out' }
+    )
+    .to('.phrase-3', { opacity: 0, scale: 1.25, duration: 0.35, ease: 'power3.in', delay: 0.2 })
+    
+    // 4. Logo Intro (Entrada con Aura Glowing y Rebote)
+    .fromTo('.splash-brand-intro', 
+      { opacity: 0, scale: 0.4 }, 
+      { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.5)' }
+    )
+    .fromTo('.logo-glow-aura', 
+      { opacity: 0, scale: 0.5 }, 
+      { opacity: 1, scale: 1.3, duration: 1.0, ease: 'power3.out' },
+      '-=0.6'
+    )
+    .fromTo('.splash-brand-title', 
+      { opacity: 0, y: 30 }, 
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+      '-=0.8'
+    )
+    
+    // Pequeña pausa dramática antes de la explosión/zoom Netflix
+    .to({}, { duration: 0.4 })
+    
+    // 5. Animación de Zoom Netflix (El logotipo se expande de forma masiva e inmersiva)
+    .to('.splash-logo-netflix', { 
+      scale: 18, 
+      filter: 'blur(15px)', 
+      opacity: 0, 
+      duration: 1.4, 
+      ease: 'power4.in' 
+    })
+    .to('.splash-brand-title', { 
+      scale: 1.8, 
+      opacity: 0, 
+      duration: 0.9, 
+      ease: 'power4.in' 
+    }, '-=1.4')
+    .to('.logo-glow-aura', { 
+      scale: 6, 
+      opacity: 1, 
+      filter: 'blur(90px)', 
+      duration: 1.2, 
+      ease: 'power4.in' 
+    }, '-=1.4')
+    
+    // Slide up y desbloqueo del sitio
+    .to('.splash-screen', { yPercent: -100, duration: 1.0, ease: 'power4.inOut' }, '-=0.5')
     .call(() => {
       document.body.classList.remove('loading-state');
     })
-    // Entrar Navbar
+    
+    // 6. Revelar elementos del Landing Page (Navbar y Hero)
     .fromTo('.navbar', { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '-=0.5')
-    // Revelar elementos del hero secuencialmente
     .fromTo('.reveal-item', 
       { y: 30, opacity: 0 }, 
       { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' }, 
       '-=0.8'
     )
-    // Animar las palabras del título principal desde abajo
     .from('.hero-title .line-inner', {
       y: 100, opacity: 0, duration: 1, stagger: 0.1, ease: 'power4.out'
     }, '-=1.2')
-    // Revelar Mockup Visual flotante
     .fromTo('.mockup-frame', 
       { opacity: 0, scale: 0.8, rotationY: -30 }, 
       { opacity: 1, scale: 1, rotationY: -15, duration: 1.2, ease: 'elastic.out(1, 0.7)' }, 
