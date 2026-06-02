@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
   <!-- Icons (Lucide) -->
@@ -92,7 +92,7 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
       <div class="container hero-container">
-        <div class="hero-content text-center">
+        <div class="hero-content">
           <div class="hero-badge reveal-item">
             <span class="pulse-dot"></span>
             <span>Sucursal Virtual Web App Premium</span>
@@ -196,50 +196,78 @@
 
         <div class="bento-grid">
           <!-- Item 1: Large -->
-          <div class="bento-card bento-large glass-panel gs-reveal">
-            <div class="bento-content">
-              <i data-lucide="smartphone-nfc" class="bento-icon"></i>
-              <h3>Identidad Absoluta</h3>
-              <p>Tu logo, tus colores, tus reglas. Olvidate de las aplicaciones genéricas donde sos un número más. Acá
-                tu marca es la protagonista indiscutida.</p>
-            </div>
-            <div class="bento-visual">
-              <div class="abstract-ring"></div>
+          <div class="bento-card bento-large outer-bezel gs-reveal" id="bento-card-1">
+            <div class="inner-core">
+              <div class="bento-content">
+                <i data-lucide="smartphone-nfc" class="bento-icon"></i>
+                <h3>Identidad Absoluta</h3>
+                <p>Tu logo, tus colores, tus reglas. Olvidate de las aplicaciones genéricas donde sos un número más. Acá tu marca es la protagonista indiscutida.</p>
+              </div>
+              <div class="neon-orb-wrapper">
+                <div class="neon-orb"></div>
+              </div>
             </div>
           </div>
 
           <!-- Item 2 -->
-          <div class="bento-card glass-panel gs-reveal delay-1">
-            <div class="bento-content">
-              <i data-lucide="message-square-check" class="bento-icon"></i>
-              <h3>Pedidos 100% Ordenados</h3>
-              <p>Olvidate de audios confusos y chats eternos. Recibí el detalle listo para armar con talles, colores, cantidades o ingredientes directamente en tu WhatsApp.</p>
+          <div class="bento-card outer-bezel gs-reveal delay-1" id="bento-card-2">
+            <div class="inner-core">
+              <div class="bento-content">
+                <i data-lucide="message-square-check" class="bento-icon"></i>
+                <h3>Pedidos 100% Ordenados</h3>
+                <p>Olvidate de audios confusos y chats eternos. Recibí el detalle armado listo para despachar directamente en tu WhatsApp.</p>
+              </div>
+              <div class="mock-chat-container">
+                <div class="mock-chat-bubble">¿Tienen stock del buzo negro en talle L? 🤔</div>
+                <div class="mock-chat-bubble me">
+                  ¡Hola! Te dejo mi pedido:
+                  • 1x Buzo Oversize Negro (L)
+                  • Entrega: Envío a domicilio 🚚
+                  • Total: $38.500
+                  <span class="chat-time">09:35 ✓✓</span>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Item 3 -->
-          <div class="bento-card glass-panel gs-reveal delay-2">
-            <div class="bento-content">
-              <i data-lucide="qr-code" class="bento-icon"></i>
-              <h3>Ecosistema QR</h3>
-              <p>Compartí tu sistema por link o en mesas y packaging mediante QR.</p>
+          <div class="bento-card outer-bezel gs-reveal delay-2" id="bento-card-3">
+            <div class="inner-core">
+              <div class="bento-content">
+                <i data-lucide="qr-code" class="bento-icon"></i>
+                <h3>Ecosistema QR</h3>
+                <p>Compartí tu sistema mediante un link directo en Instagram o con un código QR en tus mesas y packaging.</p>
+              </div>
+              <div class="mock-qr-wrapper">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="var(--text-main)" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h30v10H10v20H0V0zm70 0h30v30h-10V10H70V0zM0 70h10v20h20v10H0V70zm100 0v30H70v-10h20V70h10z" />
+                  <rect x="20" y="20" width="20" height="20" />
+                  <rect x="60" y="20" width="20" height="20" />
+                  <rect x="20" y="60" width="20" height="20" />
+                  <rect x="60" y="60" width="20" height="20" />
+                  <rect x="45" y="45" width="10" height="10" />
+                  <rect x="35" y="35" width="5" height="5" />
+                  <rect x="60" y="45" width="5" height="5" />
+                  <rect x="45" y="60" width="5" height="5" />
+                </svg>
+                <div class="qr-scanner-line"></div>
+              </div>
             </div>
           </div>
 
           <!-- Item 4: Wide -->
-          <div class="bento-card bento-wide glass-panel gs-reveal">
-            <div class="bento-content row-content">
+          <div class="bento-card bento-wide outer-bezel gs-reveal" id="bento-card-4">
+            <div class="inner-core row-content">
               <div class="bc-left">
                 <i data-lucide="zap" class="bento-icon"></i>
                 <h3>Velocidad y Conversión</h3>
-                <p>Una interfaz pulida al milímetro para que el cliente compre en 3 clics desde su celular sin instalar
-                  nada.</p>
+                <p>Una interfaz pulida al milímetro para que tus clientes compren en 3 simples clics desde su celular, sin instalar absolutamente nada.</p>
               </div>
               <div class="bc-right">
                 <div class="speed-graph">
-                  <div class="sg-bar" style="height: 30%"></div>
-                  <div class="sg-bar" style="height: 60%"></div>
-                  <div class="sg-bar" style="height: 100%"></div>
+                  <div class="sg-bar" style="height: 30%"><div class="sg-bar-fill"></div></div>
+                  <div class="sg-bar" style="height: 60%"><div class="sg-bar-fill"></div></div>
+                  <div class="sg-bar" style="height: 100%"><div class="sg-bar-fill"></div></div>
                 </div>
               </div>
             </div>
@@ -304,7 +332,7 @@
       <div class="container">
         <div class="section-header text-center gs-reveal">
           <span class="demo-badge" style="background: rgba(2, 186, 238, 0.1); color: var(--neon-cyan); border-color: rgba(2, 186, 238, 0.2);">Multirubro</span>
-          <h2 class="section-title">No es solo comida. <br>Es tu <span class="gradient-text">Sucursal Virtual</span></h2>
+          <h2 class="section-title">No es solo gastronomia. <br>Es tu <span class="gradient-text">Sucursal Virtual</span></h2>
           <p class="section-desc">Diseñamos una plataforma flexible que se adapta a las necesidades específicas de tu negocio. Sin comisiones y directo a tu WhatsApp.</p>
         </div>
 
@@ -423,82 +451,88 @@
         </div>
 
         <!-- INTERACTIVE COMMISSION CALCULATOR -->
-        <div class="calculator-container glass-panel gs-reveal">
-          <div class="calc-header">
-            <i data-lucide="calculator" class="calc-icon"></i>
-            <h3>Calculadora de Ahorro en Comisiones</h3>
-            <p>Descubrí cuánto dinero estás regalando a plataformas de delivery tradicionales (20% comisión promedio) y cuánto recuperás conservando el 100% de tus ventas con TuPedido!</p>
-          </div>
-          
-          <div class="calc-body">
-            <div class="calc-control">
-              <label for="sales-range">Tus ventas estimadas mensuales por delivery:</label>
-              <div class="sales-input-wrapper">
-                <span class="currency-symbol">$</span>
-                <span id="sales-value-display">500.000</span>
-              </div>
-              <input type="range" id="sales-range" min="100000" max="3000000" step="50000" value="500000" class="range-slider">
-              <div class="range-labels">
-                <span>$100.000</span>
-                <span>$3.000.000</span>
-              </div>
+        <div class="calculator-container outer-bezel gs-reveal">
+          <div class="inner-core">
+            <div class="calc-header">
+              <i data-lucide="calculator" class="calc-icon"></i>
+              <h3>Calculadora de Ahorro en Comisiones</h3>
+              <p>Descubrí cuánto dinero estás regalando a plataformas de delivery tradicionales (20% comisión promedio) y cuánto recuperás conservando el 100% de tus ventas con TuPedido!</p>
             </div>
             
-            <div class="calc-results">
-              <div class="result-box box-loss">
-                <span class="result-title">Pérdida en Comisiones (20%)</span>
-                <span class="result-amount" id="comission-loss">$100.000</span>
-                <span class="result-desc">Dinero que se quedan otros</span>
+            <div class="calc-body">
+              <div class="calc-control">
+                <label for="sales-range">Tus ventas estimadas mensuales por delivery:</label>
+                <div class="sales-input-wrapper">
+                  <span class="currency-symbol">$</span>
+                  <span id="sales-value-display">500.000</span>
+                </div>
+                <input type="range" id="sales-range" min="100000" max="3000000" step="50000" value="500000" class="range-slider">
+                <div class="range-labels">
+                  <span>$100.000</span>
+                  <span>$3.000.000</span>
+                </div>
               </div>
               
-              <div class="result-box box-saving highlight-saving">
-                <div class="saving-glow"></div>
-                <span class="result-title">Tu Ahorro con TuPedido!</span>
-                <span class="result-amount" id="clean-savings">$90.000</span>
-                <span class="result-desc">¡Vuelve directo a tu bolsillo!*</span>
+              <div class="calc-results">
+                <div class="result-box box-loss">
+                  <span class="result-title">Pérdida en Comisiones (20%)</span>
+                  <span class="result-amount" id="comission-loss">$100.000</span>
+                  <span class="result-desc">Dinero que se quedan otros</span>
+                </div>
+                
+                <div class="result-box box-saving highlight-saving">
+                  <div class="saving-glow"></div>
+                  <span class="result-title">Tu Ahorro con TuPedido!</span>
+                  <span class="result-amount" id="clean-savings">$90.000</span>
+                  <span class="result-desc">¡Vuelve directo a tu bolsillo!*</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="calc-footer">
-            <span>*Cálculo estimado mensualmente considerando la suscripción fija de $10 USD. Conservás el 100% de lo que vendés.</span>
+            <div class="calc-footer">
+              <span>*Cálculo estimado mensualmente considerando la suscripción fija de $10 USD. Conservás el 100% de lo que vendés.</span>
+            </div>
           </div>
         </div>
 
         <div class="pricing-grid">
 
           <!-- Plan Setup -->
-          <div class="price-card glass-panel setup-card gs-reveal">
-            <div class="plan-tag tag-glow">Único Pago</div>
-            <h3>Setup Personalizado</h3>
-            <div class="price-amount">$100<span> USD</span></div>
-            <p class="price-desc">Tu sistema llave en mano, completamente personalizado con tu marca y listo para operar.</p>
-            <ul class="price-features">
-              <li><i data-lucide="check"></i> Diseño a medida con tus logos y colores</li>
-              <li><i data-lucide="check"></i> Carga base de tu menú o catálogo inicial</li>
-              <li><i data-lucide="check"></i> Configuración de WhatsApp y métodos de pago</li>
-              <li><i data-lucide="check"></i> Generación de códigos QR oficiales</li>
-              <li><i data-lucide="check"></i> Capacitación de uso rápida y simple</li>
-            </ul>
-            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado%20por%20$100%20USD"
-              target="_blank" class="btn btn-primary w-full magnetic mt-auto">Arrancar Mi Setup</a>
+          <div class="price-card outer-bezel setup-card gs-reveal">
+            <div class="inner-core">
+              <div class="plan-tag tag-glow">Único Pago</div>
+              <h3>Setup Personalizado</h3>
+              <div class="price-amount">$100<span> USD</span></div>
+              <p class="price-desc">Tu sistema llave en mano, completamente personalizado con tu marca y listo para operar.</p>
+              <ul class="price-features">
+                <li><i data-lucide="check"></i> Diseño a medida con tus logos y colores</li>
+                <li><i data-lucide="check"></i> Carga base de tu menú o catálogo inicial</li>
+                <li><i data-lucide="check"></i> Configuración de WhatsApp y métodos de pago</li>
+                <li><i data-lucide="check"></i> Generación de códigos QR oficiales</li>
+                <li><i data-lucide="check"></i> Capacitación de uso rápida y simple</li>
+              </ul>
+              <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado%20por%20$100%20USD"
+                target="_blank" class="btn btn-primary w-full magnetic mt-auto">Arrancar Mi Setup</a>
+            </div>
           </div>
 
           <!-- Mantenimiento Mensual -->
-          <div class="price-card glass-panel premium-card gs-reveal delay-1">
-            <div class="premium-glow"></div>
-            <div class="plan-tag">Mantenimiento</div>
-            <h3>Soporte y Nube</h3>
-            <div class="price-amount">$10<span> USD/mes</span></div>
-            <p class="price-desc">Garantía de funcionamiento, actualizaciones continuas y hosting de alta velocidad.</p>
-            <ul class="price-features">
-              <li><i data-lucide="check"></i> Servidor en la nube ultrarrápido y seguro</li>
-              <li><i data-lucide="check"></i> Soporte técnico prioritario por WhatsApp</li>
-              <li><i data-lucide="check"></i> Cambios de precios, textos y productos ilimitados</li>
-              <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas del sistema</li>
-              <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas (0% fee)</li>
-            </ul>
-            <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20de%20$10%20USD%20para%20mi%20tienda"
-              target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Activar Plan Mensual</a>
+          <div class="price-card outer-bezel premium-card gs-reveal delay-1">
+            <div class="inner-core">
+              <div class="premium-glow"></div>
+              <div class="plan-tag">Mantenimiento</div>
+              <h3>Soporte y Nube</h3>
+              <div class="price-amount">$10<span> USD/mes</span></div>
+              <p class="price-desc">Garantía de funcionamiento, actualizaciones continuas y hosting de alta velocidad.</p>
+              <ul class="price-features">
+                <li><i data-lucide="check"></i> Servidor en la nube ultrarrápido y seguro</li>
+                <li><i data-lucide="check"></i> Soporte técnico prioritario por WhatsApp</li>
+                <li><i data-lucide="check"></i> Cambios de precios, textos y productos ilimitados</li>
+                <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas del sistema</li>
+                <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas (0% fee)</li>
+              </ul>
+              <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20de%20$10%20USD%20para%20mi%20tienda"
+                target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Activar Plan Mensual</a>
+            </div>
           </div>
 
         </div>
