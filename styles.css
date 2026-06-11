@@ -1205,6 +1205,36 @@ body.loading-state {
 .price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-main); }
 .price-features i { color: var(--neon-cyan); width: 18px; height: 18px; flex-shrink: 0; }
 
+.pricing-disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 700px;
+  margin: -10px auto 40px;
+  padding: 14px 24px;
+  background: rgba(15, 14, 72, 0.03);
+  border-radius: var(--r-pill);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+.pricing-disclaimer i {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--neon-cyan);
+}
+.pricing-disclaimer a {
+  color: var(--neon-pink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.pricing-disclaimer a:hover {
+  color: var(--neon-orange);
+}
+
 @media (max-width: 1200px) {
   .pricing-grid { gap: 24px; }
 }

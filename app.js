@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const commissionLoss = Math.round(sales * 0.20);
       commissionLossText.innerText = '$' + commissionLoss.toLocaleString('es-ES');
       
-      // Ahorro estimado (Comisión - $10 USD a tipo de cambio estimado ~1000)
+      // Ahorro estimado (Comisión - costo base de mantenimiento a tipo de cambio estimado ~1000)
       const usdExchange = 1000;
       const fixedMonthlyCost = 10 * usdExchange;
       const savings = Math.max(0, commissionLoss - fixedMonthlyCost);
