@@ -4,38 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>TuPedido! | El futuro de los pedidos con tu marca</title>
+  <title>TuPedido! | Tu Sucursal Virtual — Cero Comisiones</title>
   <meta name="description"
-    content="TuPedido!: Tu sucursal virtual premium para indumentaria, zapatillas, librerías, kioscos y más rubros. Recibí tus pedidos organizados directo a tu WhatsApp, sin comisiones." />
+    content="TuPedido! transforma cualquier negocio que recibe WhatsApp en una sucursal virtual profesional. Indumentaria, gastronomía, librerías, kioscos, ferretería, repuestos y más. Setup desde $100 USD + $10 USD/mes. Sin comisiones." />
+  <meta name="keywords" content="sucursal virtual, pedidos por WhatsApp, tienda online, catálogo digital, sin comisiones, TuPedido" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
-  <!-- Icons (Lucide) -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Lenis CSS -->
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="loading-state">
 
-  <!-- SPLASH / PRELOADER CINEMATICO (ESTILO NETFLIX) -->
+  <!-- CURSOR FOLLOWER -->
+  <div class="cursor-follower" id="cursorFollower">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- SPLASH CINEMATICO -->
   <div id="splash" class="splash-screen splash-cinematic">
     <div class="splash-content-wrapper">
-      <!-- Phrases Sequence -->
       <div class="splash-phrases">
         <h2 class="splash-phrase phrase-1">Tu Marca.</h2>
         <h2 class="splash-phrase phrase-2">Tus Pedidos.</h2>
         <h2 class="splash-phrase phrase-3">Sin Comisiones.</h2>
       </div>
-      <!-- Cinematic Brand Logo -->
       <div class="splash-brand-intro">
         <div class="logo-glow-aura"></div>
         <img src="img/LOGOOK.jfif" alt="TuPedido! Logo" class="splash-logo-netflix" />
@@ -44,7 +44,10 @@
     </div>
   </div>
 
-  <!-- AMBIENT NOISE & GLOW -->
+  <!-- PARTICLES CANVAS -->
+  <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+  <!-- AMBIENT GLOWS -->
   <div class="ambient-noise"></div>
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
@@ -59,9 +62,9 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#como-funciona" class="nav-link">Cómo Funciona</a>
         <a href="#rubros" class="nav-link">Rubros</a>
-        <a href="#demo" class="nav-link">Demo</a>
+        <a href="#beneficios" class="nav-link">Beneficios</a>
         <a href="#planes" class="nav-link">Planes</a>
       </nav>
 
@@ -79,9 +82,9 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-nav">
-      <a href="#beneficios" class="m-link">Beneficios</a>
+      <a href="#como-funciona" class="m-link">Cómo Funciona</a>
       <a href="#rubros" class="m-link">Rubros</a>
-      <a href="#demo" class="m-link">Demo</a>
+      <a href="#beneficios" class="m-link">Beneficios</a>
       <a href="#planes" class="m-link">Planes</a>
       <a href="https://wa.me/5493814767643?text=Hola%20-,%20quiero%20mi%20demo%20de%20TuPedido" target="_blank"
         class="m-link highlight">Contactar</a>
@@ -89,7 +92,8 @@
   </div>
 
   <main id="inicio">
-    <!-- HERO SECTION -->
+
+    <!-- HERO -->
     <section class="hero-section">
       <div class="container hero-container">
         <div class="hero-content">
@@ -99,39 +103,49 @@
           </div>
 
           <h1 class="hero-title">
-            <span class="text-line"><span class="line-inner">El futuro de</span></span>
-            <span class="text-line"><span class="line-inner">tus pedidos está</span></span>
-            <span class="text-line"><span class="line-inner gradient-text">en tu propia marca.</span></span>
+            <span class="text-line"><span class="line-inner">Tu negocio merece</span></span>
+            <span class="text-line"><span class="line-inner">su propia</span></span>
+            <span class="text-line"><span class="line-inner gradient-text">sucursal virtual.</span></span>
           </h1>
 
           <p class="hero-subtitle reveal-item delay-1">
-            Creá la <strong>sucursal virtual</strong> de tu negocio, sin importar el rubro: indumentaria, zapatillas, librerías, kioscos y más. Tus clientes eligen sus productos y te envían el pedido <strong>perfectamente ordenado directo a tu WhatsApp</strong>.
+            <strong>Cualquier negocio que recibe WhatsApp</strong> ya puede tener su propia sucursal virtual profesional. Indumentaria, gastronomía, librerías, kioscos, ferretería, repuestos, cosmética — <strong>todos los rubros.</strong> Tus clientes eligen, arman su pedido y te llega <strong>perfectamente ordenado a tu WhatsApp.</strong> Sin comisiones. Sin apps. Sin pérdidas de tiempo.
           </p>
+
+          <div class="hero-stats reveal-item delay-1">
+            <div class="hero-stat">
+              <span class="hero-stat-number counter-target" data-target="0">0%</span>
+              <span class="hero-stat-label">Comisiones</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">100%</span>
+              <span class="hero-stat-label">Tuyo</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-number counter-target" data-target="24">24hs</span>
+              <span class="hero-stat-label">Configuración</span>
+            </div>
+          </div>
 
           <div class="hero-actions reveal-item delay-2">
             <a href="https://tupedidoapp.netlify.app/" target="_blank" rel="noopener"
               class="btn btn-primary btn-massive magnetic">
               <span class="btn-glow"></span>
               <span>Probar Demo Interactiva</span>
-              <i data-lucide="arrow-right"></i>
+              <span class="btn-icon-wrap"><i data-lucide="arrow-right"></i></span>
             </a>
             <a href="https://wa.me/5493814767643?text=Hola%20-,%20quiero%20informaci%C3%B3n%20de%20TuPedido"
               target="_blank" rel="noopener" class="btn btn-secondary magnetic">
               <span>Hablemos por WhatsApp</span>
             </a>
           </div>
-
-          <div class="hero-features reveal-item delay-3">
-            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Sin Comisiones</span></div>
-            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Diseño Propio</span></div>
-            <div class="feat"><i data-lucide="check-circle-2"></i> <span>Link + QR</span></div>
-          </div>
         </div>
 
         <div class="hero-visual reveal-item delay-4">
-          <!-- Glassmorphism Phone Mockup Abstract -->
           <div class="mockup-container">
-            <div class="mockup-frame glass-panel">
+            <div class="mockup-frame glass-panel tilt-card">
               <div class="mockup-screen">
                 <div class="mockup-nav"></div>
                 <div class="mockup-item"></div>
@@ -141,16 +155,15 @@
               </div>
             </div>
 
-            <!-- Floating Elements -->
             <div class="float-card float-1 glass-panel gs-float-1">
-              <i data-lucide="message-square" class="gradient-icon"></i>
+              <i data-lucide="message-square" class="float-icon"></i>
               <div class="fc-text">
                 <strong>WhatsApp</strong>
                 <span>Pedido Recibido</span>
               </div>
             </div>
             <div class="float-card float-2 glass-panel gs-float-2">
-              <i data-lucide="scan-line" class="gradient-icon"></i>
+              <i data-lucide="scan-line" class="float-icon"></i>
               <div class="fc-text">
                 <strong>QR Code</strong>
                 <span>Escaneo Rápido</span>
@@ -161,42 +174,173 @@
       </div>
 
       <div class="scroll-down-hint">
-        <span>Explorar</span>
+        <span>Descubrir</span>
         <div class="mouse-icon"></div>
       </div>
     </section>
 
-    <!-- MARQUEE INFINITO (RUBROS) -->
+    <!-- MARQUEE RUBROS AMPLIADO -->
     <div class="marquee-wrapper">
-      <div class="marquee-track">
+      <div class="marquee-track" id="marqueeTrack">
         <div class="mq-item"><i data-lucide="shirt"></i> Indumentaria</div>
         <div class="mq-item"><i data-lucide="footprints"></i> Zapatillas</div>
         <div class="mq-item"><i data-lucide="book-open"></i> Librerías</div>
         <div class="mq-item"><i data-lucide="store"></i> Kioscos</div>
         <div class="mq-item"><i data-lucide="pizza"></i> Gastronomía</div>
-        <div class="mq-item"><i data-lucide="shopping-bag"></i> Bazares & Regalos</div>
-        <!-- Clones -->
-        <div class="mq-item"><i data-lucide="shirt"></i> Indumentaria</div>
-        <div class="mq-item"><i data-lucide="footprints"></i> Zapatillas</div>
-        <div class="mq-item"><i data-lucide="book-open"></i> Librerías</div>
-        <div class="mq-item"><i data-lucide="store"></i> Kioscos</div>
-        <div class="mq-item"><i data-lucide="pizza"></i> Gastronomía</div>
-        <div class="mq-item"><i data-lucide="shopping-bag"></i> Bazares & Regalos</div>
+        <div class="mq-item"><i data-lucide="shopping-bag"></i> Bazares</div>
+        <div class="mq-item"><i data-lucide="car"></i> Repuestos</div>
+        <div class="mq-item"><i data-lucide="wrench"></i> Ferretería</div>
+        <div class="mq-item"><i data-lucide="sparkles"></i> Cosmética</div>
+        <div class="mq-item"><i data-lucide="flower2"></i> Plantas</div>
+        <div class="mq-item"><i data-lucide="pill"></i> Farmacia</div>
+        <div class="mq-item"><i data-lucide="dog"></i> Mascotas</div>
+        <div class="mq-item clone"><i data-lucide="shirt"></i> Indumentaria</div>
+        <div class="mq-item clone"><i data-lucide="footprints"></i> Zapatillas</div>
+        <div class="mq-item clone"><i data-lucide="book-open"></i> Librerías</div>
+        <div class="mq-item clone"><i data-lucide="store"></i> Kioscos</div>
+        <div class="mq-item clone"><i data-lucide="pizza"></i> Gastronomía</div>
+        <div class="mq-item clone"><i data-lucide="shopping-bag"></i> Bazares</div>
+        <div class="mq-item clone"><i data-lucide="car"></i> Repuestos</div>
+        <div class="mq-item clone"><i data-lucide="wrench"></i> Ferretería</div>
+        <div class="mq-item clone"><i data-lucide="sparkles"></i> Cosmética</div>
+        <div class="mq-item clone"><i data-lucide="flower2"></i> Plantas</div>
+        <div class="mq-item clone"><i data-lucide="pill"></i> Farmacia</div>
+        <div class="mq-item clone"><i data-lucide="dog"></i> Mascotas</div>
       </div>
     </div>
+
+    <!-- CÓMO FUNCIONA (REEMPLAZA BENEFICIOS COMO PRIMERA SECCION) -->
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <div class="section-header text-center gs-reveal">
+          <h2 class="section-title">Convertí tu WhatsApp en una <span class="gradient-text">sucursal virtual profesional</span></h2>
+          <p class="section-desc">En 3 simples pasos tu negocio empieza a recibir pedidos ordenados sin despegar los pies del mostrador.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card outer-bezel gs-reveal">
+            <div class="inner-core step-core">
+              <div class="step-number-display">01</div>
+              <div class="step-icon-wrap">
+                <i data-lucide="palette"></i>
+              </div>
+              <h3>Personalizamos tu sucursal</h3>
+              <p>Subimos tu logo, tus colores, tus productos. Cargamos tu catálogo con fotos, precios y variantes. Te generamos un link único y un código QR.</p>
+            </div>
+          </div>
+
+          <div class="step-connector gs-reveal">
+            <div class="connector-line"></div>
+            <i data-lucide="arrow-down" class="connector-arrow"></i>
+          </div>
+
+          <div class="step-card outer-bezel gs-reveal delay-1">
+            <div class="inner-core step-core">
+              <div class="step-number-display">02</div>
+              <div class="step-icon-wrap">
+                <i data-lucide="qrcode"></i>
+              </div>
+              <h3>Compartís con tus clientes</h3>
+              <p>Publicás el link en tu Instagram, pegás el QR en tu local o lo imprimís en tus bolsas. El cliente abre, elige y pide sin instalar nada.</p>
+            </div>
+          </div>
+
+          <div class="step-connector gs-reveal">
+            <div class="connector-line"></div>
+            <i data-lucide="arrow-down" class="connector-arrow"></i>
+          </div>
+
+          <div class="step-card outer-bezel gs-reveal delay-2">
+            <div class="inner-core step-core">
+              <div class="step-number-display">03</div>
+              <div class="step-icon-wrap">
+                <i data-lucide="message-square-check"></i>
+              </div>
+              <h3>Recibís el pedido en WhatsApp</h3>
+              <p>Te llega un mensaje perfectamente estructurado con cada producto, cantidad, datos de entrega y método de pago. Solo preparás y cobrás.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNA SUCURSAL VIRTUAL PARA CADA RUBRO -->
+    <section id="rubros" class="section rubros-section">
+      <div class="container">
+        <div class="section-header text-center gs-reveal">
+          <span class="demo-badge" style="background: rgba(2, 186, 238, 0.1); color: var(--neon-cyan); border-color: rgba(2, 186, 238, 0.2);">Multirubro</span>
+          <h2 class="section-title">No importa lo que vendas. <br>Si recibís WhatsApp, <span class="gradient-text">tenés sucursal virtual.</span></h2>
+          <p class="section-desc">TuPedido! no es solo para gastronomía. Es una plataforma universal que se adapta a cualquier tipo de negocio. Creá tu catálogo digital en minutos y empezá a recibir pedidos ordenados sin comisiones.</p>
+        </div>
+
+        <div class="rubros-grid">
+          <div class="rubro-card glass-panel gs-reveal tilt-card-light">
+            <div class="rubro-icon-wrapper color-pink">
+              <i data-lucide="shirt"></i>
+            </div>
+            <h3>Indumentaria y Moda</h3>
+            <p>Mostrá tus prendas con variantes de talles, colores y stock. El cliente elige y te llega el pedido detallado listo para despachar.</p>
+            <span class="rubro-tag">Moda / Accesorios</span>
+          </div>
+
+          <div class="rubro-card glass-panel gs-reveal delay-1 tilt-card-light">
+            <div class="rubro-icon-wrapper color-orange">
+              <i data-lucide="footprints"></i>
+            </div>
+            <h3>Calzado y Zapatillas</h3>
+            <p>Presentá modelos, marcas y talles disponibles. El cliente selecciona su par y completa sus datos de entrega en segundos.</p>
+            <span class="rubro-tag">Calzado / Deportes</span>
+          </div>
+
+          <div class="rubro-card glass-panel gs-reveal delay-2 tilt-card-light">
+            <div class="rubro-icon-wrapper color-blue">
+              <i data-lucide="book-open"></i>
+            </div>
+            <h3>Librerías y Jugueterías</h3>
+            <p>Organizá categorías por textos escolares, oficina o juegos. Ideal para pedidos grandes y ordenados en un solo carrito.</p>
+            <span class="rubro-tag">Artículos / Oficina</span>
+          </div>
+
+          <div class="rubro-card glass-panel gs-reveal tilt-card-light">
+            <div class="rubro-icon-wrapper color-green">
+              <i data-lucide="store"></i>
+            </div>
+            <h3>Kioscos y Almacenes</h3>
+            <p>Cargá golosinas, bebidas, snacks y fiambrería. Compras rápidas ideales para envíos del barrio o retiros express.</p>
+            <span class="rubro-tag">Drugstores / Almacenes</span>
+          </div>
+
+          <div class="rubro-card glass-panel gs-reveal delay-1 tilt-card-light">
+            <div class="rubro-icon-wrapper color-cyan">
+              <i data-lucide="pizza"></i>
+            </div>
+            <h3>Gastronomía y Cafés</h3>
+            <p>Configurá agregados, extras y opciones de envío con costos dinámicos por zona. Ideal para pizzerías, hamburgueserías y cafeterías.</p>
+            <span class="rubro-tag">Restaurantes / Heladerías</span>
+          </div>
+
+          <div class="rubro-card glass-panel gs-reveal delay-2 tilt-card-light">
+            <div class="rubro-icon-wrapper color-purple">
+              <i data-lucide="layout-grid"></i>
+            </div>
+            <h3>Y muchos rubros más</h3>
+            <p>Ferretería, repuestos, cosmética, farmacia, mascotas, plantas, regalos... Si vendés productos por WhatsApp, TuPedido! es para vos.</p>
+            <span class="rubro-tag">Personalizable 100%</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- BENEFICIOS (BENTO GRID) -->
     <section id="beneficios" class="section">
       <div class="container">
         <div class="section-header text-center gs-reveal">
           <h2 class="section-title">El poder de tener <span class="gradient-text">tu propio sistema</span></h2>
-          <p class="section-desc">Diseñado para aplastar a la competencia y darle a tus clientes una experiencia de
-            compra sin fricción.</p>
+          <p class="section-desc">Olvidate de las apps genéricas, las comisiones abusivas y el caos de los audios de WhatsApp. Con TuPedido! tu marca es la protagonista.</p>
         </div>
 
         <div class="bento-grid">
-          <!-- Item 1: Large -->
-          <div class="bento-card bento-large outer-bezel gs-reveal" id="bento-card-1">
+          <div class="bento-card bento-large outer-bezel gs-reveal tilt-card-light" id="bento-card-1">
             <div class="inner-core">
               <div class="bento-content">
                 <i data-lucide="smartphone-nfc" class="bento-icon"></i>
@@ -209,8 +353,7 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="bento-card outer-bezel gs-reveal delay-1" id="bento-card-2">
+          <div class="bento-card outer-bezel gs-reveal delay-1 tilt-card-light" id="bento-card-2">
             <div class="inner-core">
               <div class="bento-content">
                 <i data-lucide="message-square-check" class="bento-icon"></i>
@@ -218,25 +361,24 @@
                 <p>Olvidate de audios confusos y chats eternos. Recibí el detalle armado listo para despachar directamente en tu WhatsApp.</p>
               </div>
               <div class="mock-chat-container">
-                <div class="mock-chat-bubble">¿Tienen stock del buzo negro en talle L? 🤔</div>
+                <div class="mock-chat-bubble">¿Tienen stock del buzo negro en talle L?</div>
                 <div class="mock-chat-bubble me">
                   ¡Hola! Te dejo mi pedido:
-                  • 1x Buzo Oversize Negro (L)
-                  • Entrega: Envío a domicilio 🚚
-                  • Total: $38.500
+                  &bull; 1x Buzo Oversize Negro (L)
+                  &bull; Entrega: Envío a domicilio
+                  &bull; Total: $38.500
                   <span class="chat-time">09:35 ✓✓</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Item 3 -->
-          <div class="bento-card outer-bezel gs-reveal delay-2" id="bento-card-3">
+          <div class="bento-card outer-bezel gs-reveal delay-2 tilt-card-light" id="bento-card-3">
             <div class="inner-core">
               <div class="bento-content">
                 <i data-lucide="qr-code" class="bento-icon"></i>
                 <h3>Ecosistema QR</h3>
-                <p>Compartí tu sistema mediante un link directo en Instagram o con un código QR en tus mesas y packaging.</p>
+                <p>Compartí tu sistema mediante un link directo o con un código QR en tus mesas, packaging y redes sociales.</p>
               </div>
               <div class="mock-qr-wrapper">
                 <svg width="80" height="80" viewBox="0 0 100 100" fill="var(--text-main)" xmlns="http://www.w3.org/2000/svg">
@@ -255,8 +397,7 @@
             </div>
           </div>
 
-          <!-- Item 4: Wide -->
-          <div class="bento-card bento-wide outer-bezel gs-reveal" id="bento-card-4">
+          <div class="bento-card bento-wide outer-bezel gs-reveal tilt-card-light" id="bento-card-4">
             <div class="inner-core row-content">
               <div class="bc-left">
                 <i data-lucide="zap" class="bento-icon"></i>
@@ -266,8 +407,8 @@
               <div class="bc-right">
                 <div class="speed-graph">
                   <div class="sg-bar" style="height: 30%"><div class="sg-bar-fill"></div></div>
-                  <div class="sg-bar" style="height: 60%"><div class="sg-bar-fill"></div></div>
-                  <div class="sg-bar" style="height: 100%"><div class="sg-bar-fill"></div></div>
+                  <div class="sg-bar" style="height: 60%"><div class="sg-bar-fill gradient-fill"></div></div>
+                  <div class="sg-bar" style="height: 100%"><div class="sg-bar-fill accent-fill"></div></div>
                 </div>
               </div>
             </div>
@@ -276,131 +417,40 @@
       </div>
     </section>
 
-    <!-- UNA SUCURSAL VIRTUAL PARA CADA RUBRO -->
-    <section id="rubros" class="section rubros-section">
+    <!-- NÚMEROS / CONFIANZA -->
+    <section class="section numbers-section">
       <div class="container">
-        <div class="section-header text-center gs-reveal">
-          <span class="demo-badge" style="background: rgba(2, 186, 238, 0.1); color: var(--neon-cyan); border-color: rgba(2, 186, 238, 0.2);">Multirubro</span>
-          <h2 class="section-title">No es solo gastronomia. <br>Es tu <span class="gradient-text">Sucursal Virtual</span></h2>
-          <p class="section-desc">Diseñamos una plataforma flexible que se adapta a las necesidades específicas de tu negocio. Sin comisiones y directo a tu WhatsApp.</p>
+        <div class="numbers-grid">
+          <div class="number-card gs-reveal">
+            <div class="number-value">
+              <span class="counter" data-target="0">0</span><span class="number-suffix">%</span>
+            </div>
+            <div class="number-label">Comisiones</div>
+            <div class="number-desc">Quedate con el 100% de tus ventas</div>
+          </div>
+          <div class="number-card gs-reveal delay-1">
+            <div class="number-value">
+              $<span class="counter" data-target="100">0</span><span class="number-suffix"> USD</span>
+            </div>
+            <div class="number-label">Setup Único</div>
+            <div class="number-desc">Tu sucursal virtual lista para operar</div>
+          </div>
+          <div class="number-card gs-reveal delay-2">
+            <div class="number-value">
+              $<span class="counter" data-target="10">0</span><span class="number-suffix"> USD/mes</span>
+            </div>
+            <div class="number-label">Mantenimiento</div>
+            <div class="number-desc">Hosting, soporte y actualizaciones</div>
+          </div>
         </div>
-
-        <div class="rubros-grid">
-          <!-- Card Indumentaria -->
-          <div class="rubro-card glass-panel gs-reveal">
-            <div class="rubro-icon-wrapper color-pink">
-              <i data-lucide="shirt"></i>
-            </div>
-            <h3>Indumentaria y Moda</h3>
-            <p>Mostrá tus prendas con fotos de alta calidad. Configurá variantes de talles, colores y stock. Tus clientes eligen sus prendas y te llega el pedido detallado listo para despachar.</p>
-            <span class="rubro-tag">Moda / Accesorios</span>
-          </div>
-
-          <!-- Card Calzado -->
-          <div class="rubro-card glass-panel gs-reveal delay-1">
-            <div class="rubro-icon-wrapper color-orange">
-              <i data-lucide="footprints"></i>
-            </div>
-            <h3>Calzado y Zapatillas</h3>
-            <p>Presentá tus modelos, marcas y talles disponibles de forma visual. El cliente selecciona su par perfecto y completa sus datos de entrega en segundos sin fricciones.</p>
-            <span class="rubro-tag">Calzado / Deportes</span>
-          </div>
-
-          <!-- Card Librerías -->
-          <div class="rubro-card glass-panel gs-reveal delay-2">
-            <div class="rubro-icon-wrapper color-blue">
-              <i data-lucide="book-open"></i>
-            </div>
-            <h3>Librerías y Jugueterías</h3>
-            <p>Organizá tus categorías por textos escolares, oficina, regalos o juegos. Ideal para que los clientes armen listas de pedidos grandes de forma ordenada en un solo carrito.</p>
-            <span class="rubro-tag">Artículos / Oficina</span>
-          </div>
-
-          <!-- Card Kioscos -->
-          <div class="rubro-card glass-panel gs-reveal">
-            <div class="rubro-icon-wrapper color-green">
-              <i data-lucide="store"></i>
-            </div>
-            <h3>Kioscos y Almacenes</h3>
-            <p>Cargá golosinas, bebidas, snacks y fiambrería. Permite compras rápidas y sencillas, ideales para envíos rápidos del barrio o retiros express en el local.</p>
-            <span class="rubro-tag">Drugstores / Almacenes</span>
-          </div>
-
-          <!-- Card Gastronomía -->
-          <div class="rubro-card glass-panel gs-reveal delay-1">
-            <div class="rubro-icon-wrapper color-cyan">
-              <i data-lucide="pizza"></i>
-            </div>
-            <h3>Gastronomía y Cafés</h3>
-            <p>Pizzerías, hamburgueserías y cafeterías. Configurá agregados (extras, aderezos, salsas) y opciones de envío con costos dinámicos según la zona.</p>
-            <span class="rubro-tag">Restaurantes / Heladerías</span>
-          </div>
-
-          <!-- Card Otros -->
-          <div class="rubro-card glass-panel gs-reveal delay-2">
-            <div class="rubro-icon-wrapper color-purple">
-              <i data-lucide="layout-grid"></i>
-            </div>
-            <h3>Cualquier otro Rubro</h3>
-            <p>¿Vendés repuestos, cosmética, ferretería o plantas? TuPedido se amolda perfectamente. Si tenés productos y querés vender más por WhatsApp, creamos tu sucursal virtual.</p>
-            <span class="rubro-tag">Personalizable 100%</span>
-          </div>
+        <div class="numbers-footnote text-center gs-reveal">
+          <i data-lucide="info"></i>
+          <span>Aceptamos pagos en <strong>pesos argentinos</strong> al valor del día. $100 USD ≈ equivalente en ARS al tipo de cambio oficial.</span>
         </div>
       </div>
     </section>
 
-    <!-- DEMO / SCROLL PINNING (COMO FUNCIONA) -->
-    <section id="demo" class="section demo-section">
-      <div class="container demo-container">
-
-        <div class="demo-sticky-left gs-reveal">
-          <div class="demo-badge">Live Demo</div>
-          <h2 class="section-title">La experiencia <br><span class="gradient-text">en acción.</span></h2>
-          <p class="section-desc">Mirá lo simple que es convertir un visitante en una venta real. Cada paso está
-            optimizado para la conversión.</p>
-
-          <a href="https://tupedidoapp.netlify.app/" target="_blank" rel="noopener"
-            class="btn btn-primary magnetic mt-4">
-            <span class="btn-glow"></span>
-            <span>Acceder a la Demo</span>
-            <i data-lucide="external-link"></i>
-          </a>
-        </div>
-
-        <div class="demo-scroll-right">
-          <!-- Step 1 -->
-          <div class="demo-step glass-panel gs-step">
-            <div class="step-number">01</div>
-            <h3>El cliente entra</h3>
-            <p>A través de tu link de Instagram o escaneando un QR. La carga es instantánea y se sumerge en tu catálogo
-              visual.</p>
-          </div>
-          <!-- Step 2 -->
-          <div class="demo-step glass-panel gs-step">
-            <div class="step-number">02</div>
-            <h3>Selecciona y Personaliza</h3>
-            <p>Agrega los productos al carrito de forma súper intuitiva. Puede ver detalles, precios e ingredientes.</p>
-          </div>
-          <!-- Step 3 -->
-          <div class="demo-step glass-panel gs-step">
-            <div class="step-number">03</div>
-            <h3>Completa los Datos</h3>
-            <p>Elige si es delivery o retiro, ingresa sus datos y ve los métodos de pago que configuraste (Alias,
-              Efectivo, etc).</p>
-          </div>
-          <!-- Step 4 -->
-          <div class="demo-step glass-panel gs-step">
-            <div class="step-number">04</div>
-            <h3>Pedido Recibido</h3>
-            <p>¡Boom! Te llega un mensaje perfecto a tu WhatsApp con el detalle exacto. Sin preguntas, solo preparar y
-              cobrar.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ANTES VS AHORA -->
+    <!-- COMPARACIÓN ANTES VS AHORA -->
     <section class="section comparison-section">
       <div class="container">
         <div class="section-header text-center gs-reveal">
@@ -408,7 +458,6 @@
         </div>
 
         <div class="compare-grid">
-          <!-- BAD -->
           <div class="compare-card compare-bad glass-panel gs-reveal">
             <div class="compare-header">
               <i data-lucide="x-octagon" class="icon-bad"></i>
@@ -423,7 +472,6 @@
             </ul>
           </div>
 
-          <!-- GOOD -->
           <div class="compare-card compare-good glass-panel gs-reveal delay-1">
             <div class="good-glow"></div>
             <div class="compare-header">
@@ -442,34 +490,33 @@
       </div>
     </section>
 
-    <!-- PLANES -->
-    <section id="planes" class="section pricing-section">
+    <!-- CALCULADORA DE AHORRO -->
+    <section class="section">
       <div class="container">
         <div class="section-header text-center gs-reveal">
-          <h2 class="section-title">Inversión y <span class="gradient-text">Mantenimiento</span></h2>
-          <p class="section-desc">Costos transparentes y flexibles. Pagás únicamente por lo que necesitas, sin ataduras ni compromisos.</p>
+          <h2 class="section-title">¿Cuánto estás <span class="gradient-text">regalando en comisiones?</span></h2>
+          <p class="section-desc">Las plataformas de delivery tradicionales cobran hasta 30% por pedido. Con TuPedido! el 100% es tuyo.</p>
         </div>
 
-        <!-- INTERACTIVE COMMISSION CALCULATOR -->
         <div class="calculator-container outer-bezel gs-reveal">
           <div class="inner-core">
             <div class="calc-header">
               <i data-lucide="calculator" class="calc-icon"></i>
-              <h3>Calculadora de Ahorro en Comisiones</h3>
-              <p>Descubrí cuánto dinero estás regalando a plataformas de delivery tradicionales (20% comisión promedio) y cuánto recuperás conservando el 100% de tus ventas con TuPedido!</p>
+              <h3>Calculadora de Ahorro</h3>
+              <p>Deslizá y descubrí cuánto recuperás por mes eliminando intermediarios.</p>
             </div>
             
             <div class="calc-body">
               <div class="calc-control">
-                <label for="sales-range">Tus ventas estimadas mensuales por delivery:</label>
+                <label for="sales-range">Ventas mensuales estimadas por delivery:</label>
                 <div class="sales-input-wrapper">
                   <span class="currency-symbol">$</span>
                   <span id="sales-value-display">500.000</span>
                 </div>
-                <input type="range" id="sales-range" min="100000" max="3000000" step="50000" value="500000" class="range-slider">
+                <input type="range" id="sales-range" min="100000" max="5000000" step="50000" value="500000" class="range-slider">
                 <div class="range-labels">
                   <span>$100.000</span>
-                  <span>$3.000.000</span>
+                  <span>$5.000.000</span>
                 </div>
               </div>
               
@@ -489,57 +536,65 @@
               </div>
             </div>
             <div class="calc-footer">
-              <span>*Cálculo estimado mensualmente considerando el plan de mantenimiento base. Conservás el 100% de lo que vendés.</span>
+              <span>*Cálculo estimado mensual. Considerá el plan de mantenimiento base de $10 USD.</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="planes" class="section pricing-section">
+      <div class="container">
+        <div class="section-header text-center gs-reveal">
+          <h2 class="section-title">Inversión clara. <span class="gradient-text">Sin sorpresas.</span></h2>
+          <p class="section-desc">Precios fijos y transparentes. Pagás una vez el setup y una cuota mensual mínima. <strong>Aceptamos pesos argentinos al valor del día.</strong></p>
         </div>
 
         <div class="pricing-disclaimer">
           <i data-lucide="info"></i>
-          <span>Los precios son referenciales. Cada proyecto se cotiza según el alcance, la cantidad de productos y las personalizaciones requeridas. <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20una%20cotizaci%C3%B3n%20personalizada%20para%20mi%20negocio" target="_blank">Pedí tu cotización sin compromiso</a>.</span>
+          <span>Precios en USD o su equivalente en <strong>pesos argentinos</strong> al tipo de cambio del día. Pagás con transferencia, Mercado Pago o efectivo. <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20una%20cotizaci%C3%B3n%20personalizada%20para%20mi%20negocio" target="_blank">Consultá sin compromiso</a>.</span>
         </div>
 
         <div class="pricing-grid">
-
-          <!-- Plan Setup -->
           <div class="price-card outer-bezel setup-card gs-reveal">
             <div class="inner-core">
               <div class="plan-tag tag-glow">Único Pago</div>
               <h3>Setup Personalizado</h3>
-              <div class="price-amount">Desde $100<span> USD</span></div>
-              <p class="price-desc">Tu sistema llave en mano, personalizado con tu marca y listo para operar. El precio final depende de la complejidad de tu catálogo y las personalizaciones que requieras.</p>
+              <div class="price-amount">$100<span> USD</span></div>
+              <p class="price-desc">Tu sistema completamente configurado con tu marca, productos y listo para operar.</p>
               <ul class="price-features">
-                <li><i data-lucide="check"></i> Diseño a medida con tus logos y colores</li>
-                <li><i data-lucide="check"></i> Carga base de tu menú o catálogo inicial</li>
-                <li><i data-lucide="check"></i> Configuración de WhatsApp y métodos de pago</li>
-                <li><i data-lucide="check"></i> Generación de códigos QR oficiales</li>
-                <li><i data-lucide="check"></i> Capacitación de uso rápida y simple</li>
+                <li><i data-lucide="check"></i> Diseño a medida con tu logo y colores</li>
+                <li><i data-lucide="check"></i> Carga de catálogo (productos, precios, fotos)</li>
+                <li><i data-lucide="check"></i> Configuración WhatsApp y métodos de pago</li>
+                <li><i data-lucide="check"></i> Generación de link único + código QR</li>
+                <li><i data-lucide="check"></i> Capacitación completa vía WhatsApp</li>
               </ul>
+              <div class="price-pesos-note">También en pesos ARS al día</div>
               <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20comenzar%20con%20el%20Setup%20de%20mi%20TuPedido%20personalizado"
                 target="_blank" class="btn btn-primary w-full magnetic mt-auto">Arrancar Mi Setup</a>
             </div>
           </div>
 
-          <!-- Mantenimiento Mensual -->
           <div class="price-card outer-bezel premium-card gs-reveal delay-1">
             <div class="inner-core">
               <div class="premium-glow"></div>
               <div class="plan-tag">Mantenimiento</div>
               <h3>Soporte y Nube</h3>
-              <div class="price-amount">Desde $10<span> USD/mes</span></div>
-              <p class="price-desc">Para catálogos de tamaño estándar. Incluye hosting, soporte prioritario y actualizaciones continuas. Si tenés un catálogo grande o requerimientos especiales, te armamos un plan a tu medida.</p>
+              <div class="price-amount">$10<span> USD/mes</span></div>
+              <p class="price-desc">Tu sucursal virtual siempre activa, actualizada y soportada.</p>
               <ul class="price-features">
-                <li><i data-lucide="check"></i> Servidor en la nube ultrarrápido y seguro</li>
+                <li><i data-lucide="check"></i> Hosting en la nube ultrarrápido y seguro</li>
                 <li><i data-lucide="check"></i> Soporte técnico prioritario por WhatsApp</li>
-                <li><i data-lucide="check"></i> Cambios de precios, textos y productos ilimitados</li>
-                <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas del sistema</li>
-                <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas (0% fee)</li>
+                <li><i data-lucide="check"></i> Cambios ilimitados de precios y productos</li>
+                <li><i data-lucide="check"></i> Actualizaciones y mejoras continuas</li>
+                <li><i data-lucide="check"></i> Cero comisiones en todas tus ventas</li>
               </ul>
+              <div class="price-pesos-note">Aceptamos pagos en ARS mensuales</div>
               <a href="https://wa.me/5493814767643?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20el%20soporte%20y%20mantenimiento%20mensual%20para%20mi%20tienda"
                 target="_blank" class="btn btn-secondary w-full magnetic mt-auto">Activar Plan Mensual</a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -547,12 +602,13 @@
     <!-- FINAL CTA -->
     <section class="section final-cta">
       <div class="container text-center gs-reveal">
-        <h2 class="massive-text">¿Listo para dar el <br><span class="gradient-text">salto digital?</span></h2>
-        <p class="final-desc">Tus clientes se merecen la mejor experiencia. Tu negocio se merece el orden.</p>
+        <h2 class="massive-text">¿Listo para tener tu <br><span class="gradient-text">sucursal virtual?</span></h2>
+        <p class="final-desc">No necesitás página web, ni app, ni conocimientos técnicos. Solo tus ganas de vender más.</p>
         <div class="final-actions">
           <a href="https://tupedidoapp.netlify.app/" target="_blank" class="btn btn-primary btn-massive magnetic">
             <span class="btn-glow"></span>
             Probar Demo Interactiva
+            <span class="btn-icon-wrap"><i data-lucide="arrow-right"></i></span>
           </a>
           <a href="https://wa.me/5493814767643?text=Hola%20-,%20quiero%20mi%20TuPedido" target="_blank"
             class="btn btn-secondary magnetic">
@@ -573,9 +629,9 @@
       </div>
       <div class="footer-links">
         <a href="#inicio">Inicio</a>
-        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Cómo Funciona</a>
         <a href="#rubros">Rubros</a>
-        <a href="#demo">Demo</a>
+        <a href="#beneficios">Beneficios</a>
         <a href="#planes">Planes</a>
       </div>
       <div class="footer-legal">
@@ -584,21 +640,14 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/5493814767643?text=Hola,%20tengo%20una%20consulta%20sobre%20TuPedido" target="_blank"
     class="fab-wa magnetic" aria-label="WhatsApp">
     <i data-lucide="message-circle"></i>
   </a>
 
-  <!-- SCRIPTS -->
-  <!-- GSAP & Plugins -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Lenis -->
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
-
-  <!-- App logic -->
   <script src="app.js"></script>
 </body>
 
