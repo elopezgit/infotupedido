@@ -340,6 +340,33 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
+  /* ==========================================================================
+     DEMO FLOW STEP ANIMATION (scroll reveal)
+     ========================================================================== */
+  const demoSteps = document.querySelectorAll('.gs-demo-step');
+  if (demoSteps.length > 0) {
+    demoSteps.forEach((step) => {
+      ScrollTrigger.create({
+        trigger: step,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleClass: { targets: step, className: 'active' },
+      });
+    });
+
+    // Also animate the phone mockup floating
+    gsap.to('.phone-mockup-wrapper', {
+      y: -20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.demo-flow-section',
+        start: 'top bottom',
+        end: 'center center',
+        scrub: 1
+      }
+    });
+  }
+
   // Hero mockup parallax
   gsap.to('.mockup-frame', {
     rotationY: 0,
