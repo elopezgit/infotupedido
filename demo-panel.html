@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuPedido! — CRM & Dashboard de Control (Demo Modelo)</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fd8c02'/><text x='50' y='65' font-size='50' font-weight='bold' text-anchor='middle' fill='%23000000'>T!</text></svg>">
+  
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="panel.css">
+  
+  <!-- Lucide Icons & Chart.js -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================================
+       SIDEBAR NAVIGATION
+       ========================================================== -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="brand-logo">
+        TuPedido<span>!</span>
+      </a>
+      <span class="brand-badge">DEMO PRO</span>
+    </div>
+
+    <nav class="sidebar-menu">
+      <div class="menu-label">Central Operativa</div>
+      
+      <button class="nav-item active" data-tab="analytics">
+        <i data-lucide="bar-chart-3"></i>
+        <span>Resumen Ejecutivo</span>
+      </button>
+      
+      <button class="nav-item" data-tab="kanban">
+        <i data-lucide="trello"></i>
+        <span>Kanban de Pedidos</span>
+        <span class="nav-badge">9</span>
+      </button>
+      
+      <button class="nav-item" data-tab="crm">
+        <i data-lucide="users"></i>
+        <span>CRM de Clientes VIP</span>
+      </button>
+
+      <div class="menu-label">Catálogo & Marketing</div>
+      
+      <button class="nav-item" data-tab="catalog">
+        <i data-lucide="shopping-bag"></i>
+        <span>Productos & Precios</span>
+      </button>
+      
+      <button class="nav-item" data-tab="banners">
+        <i data-lucide="image"></i>
+        <span>Banners Publicitarios</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div style="font-size:0.75rem; color:var(--text-muted); line-height:1.4;">
+        💡 <strong>Modo Demo Modelo:</strong> Acceso libre para explorar el control total de TuPedido!
+      </div>
+      <a href="index.html" class="back-to-landing">
+        <i data-lucide="arrow-left"></i> Volver a la Landing Web
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================
+       MAIN CONTENT AREA & TOPBAR
+       ========================================================== -->
+  <main class="main-area">
+    
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-title">
+          <h1>Panel de Control <span>/ Burger House & Pizza (Sucursal Demo)</span></h1>
+        </div>
+      </div>
+      
+      <div class="topbar-right">
+        <div class="sim-status">
+          <span class="status-pulse"></span> Sincronizado con WhatsApp
+        </div>
+        
+        <div class="topbar-clock" id="liveClock">
+          <i data-lucide="clock"></i> En vivo: 20:45 hs
+        </div>
+        
+        <button class="btn-quick-print" onclick="triggerPrint()">
+          <i data-lucide="printer"></i> Imprimir Reporte / Comanda
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================================
+         TAB PANELS CONTAINER
+         ========================================================== -->
+    <div class="content-body">
+      
+      <!-- --------------------------------------------------------
+           TAB 1: ANALYTICS / RESUMEN EJECUTIVO
+           -------------------------------------------------------- -->
+      <section id="tab-analytics" class="tab-pane active">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Facturación del Día</span>
+              <div class="kpi-icon"><i data-lucide="dollar-sign"></i></div>
+            </div>
+            <div class="kpi-value">$1.150.000</div>
+            <div class="kpi-trend"><i data-lucide="trending-up"></i> +28.4% vs ayer</div>
+          </div>
+          
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Pedidos Recibidos Hoy</span>
+              <div class="kpi-icon cyan"><i data-lucide="shopping-cart"></i></div>
+            </div>
+            <div class="kpi-value">64 órdenes</div>
+            <div class="kpi-trend"><i data-lucide="check-circle-2"></i> 100% sin comisiones</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Ticket Promedio</span>
+              <div class="kpi-icon green"><i data-lucide="credit-card"></i></div>
+            </div>
+            <div class="kpi-value">$17.960</div>
+            <div class="kpi-trend"><i data-lucide="trending-up"></i> +12% combos VIP</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-label">Clientes VIP / Habituales</span>
+              <div class="kpi-icon purple"><i data-lucide="users"></i></div>
+            </div>
+            <div class="kpi-value">482 clientes</div>
+            <div class="kpi-trend"><i data-lucide="heart"></i> 68% de recurrencia</div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title"><i data-lucide="bar-chart-2"></i> Facturación Semanal en Vivo ($ ARS)</div>
+              <div class="chart-actions">
+                <button class="chart-btn active">Semana</button>
+                <button class="chart-btn" onclick="showToast('📈 Vista mensual cargada.')">Mes</button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="salesBarChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title"><i data-lucide="pie-chart"></i> Pedidos por Rubro / Categoría</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="categoryDonutChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title"><i data-lucide="activity"></i> Eficiencia y Rendimiento Operativo (Radar)</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="performanceRadarChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title"><i data-lucide="clock"></i> Horarios Pico de Recepción de Órdenes</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="hoursLineChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------
+           TAB 2: KANBAN DE PEDIDOS (DRAG & DROP)
+           -------------------------------------------------------- -->
+      <section id="tab-kanban" class="tab-pane">
+        <div class="kanban-controls">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="search-box">
+              <i data-lucide="search"></i>
+              <input type="text" id="kanbanSearchInput" placeholder="Buscar por cliente, #ORD o producto...">
+            </div>
+            <span style="color:var(--text-secondary); font-size:0.85rem;">
+              💡 <strong>Tip Drag & Drop:</strong> Arrastrá las tarjetas de pedido entre las columnas para cambiar su estado al instante.
+            </span>
+          </div>
+
+          <div class="kanban-actions">
+            <button class="btn-primary" onclick="showToast('✅ Nueva orden simulada ingresada con éxito #ORD-846!')">
+              <i data-lucide="plus"></i> Simular Nuevo Pedido WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <div class="kanban-board">
+          <!-- Columna 1: Pendiente -->
+          <div class="kanban-column" data-status="pending">
+            <div class="kanban-col-header" style="border-top: 4px solid var(--status-pending);">
+              <div class="kanban-col-title">
+                <i data-lucide="clock" style="color:var(--status-pending);"></i>
+                <span>⌛ Pendiente</span>
+              </div>
+              <span class="col-count" id="count-pending">0</span>
+            </div>
+            <div class="kanban-cards-container" id="kanban-pending" data-status="pending"></div>
+          </div>
+
+          <!-- Columna 2: En Preparación -->
+          <div class="kanban-column" data-status="prep">
+            <div class="kanban-col-header" style="border-top: 4px solid var(--status-prep);">
+              <div class="kanban-col-title">
+                <i data-lucide="flame" style="color:var(--status-prep);"></i>
+                <span>🍳 En Preparación</span>
+              </div>
+              <span class="col-count" id="count-prep">0</span>
+            </div>
+            <div class="kanban-cards-container" id="kanban-prep" data-status="prep"></div>
+          </div>
+
+          <!-- Columna 3: Despachado -->
+          <div class="kanban-column" data-status="dispatch">
+            <div class="kanban-col-header" style="border-top: 4px solid var(--status-dispatch);">
+              <div class="kanban-col-title">
+                <i data-lucide="bike" style="color:var(--status-dispatch);"></i>
+                <span>🚀 Despachado</span>
+              </div>
+              <span class="col-count" id="count-dispatch">0</span>
+            </div>
+            <div class="kanban-cards-container" id="kanban-dispatch" data-status="dispatch"></div>
+          </div>
+
+          <!-- Columna 4: Entregado -->
+          <div class="kanban-column" data-status="done">
+            <div class="kanban-col-header" style="border-top: 4px solid var(--status-done);">
+              <div class="kanban-col-title">
+                <i data-lucide="check-circle-2" style="color:var(--status-done);"></i>
+                <span>✅ Entregado</span>
+              </div>
+              <span class="col-count" id="count-done">0</span>
+            </div>
+            <div class="kanban-cards-container" id="kanban-done" data-status="done"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------
+           TAB 3: CRM DE CLIENTES HABITUALES & VIP
+           -------------------------------------------------------- -->
+      <section id="tab-crm" class="tab-pane">
+        <div class="table-card">
+          <div class="table-header-bar">
+            <div>
+              <h2>CRM de Clientes Habituales & Trato VIP</h2>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-top:4px;">
+                El sistema detecta y registra de forma automática cada cliente que te compra vía WhatsApp.
+              </p>
+            </div>
+            
+            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+              <div class="search-box" style="width:260px;">
+                <i data-lucide="search"></i>
+                <input type="text" id="crmSearchInput" placeholder="Buscar por nombre o celular...">
+              </div>
+              <div class="table-filters">
+                <button class="filter-chip active" data-tag="all">Todos</button>
+                <button class="filter-chip" data-tag="VIP">⭐ VIP</button>
+                <button class="filter-chip" data-tag="Habitual">Habituales</button>
+                <button class="filter-chip" data-tag="Nuevo">Nuevos</button>
+              </div>
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Celular WhatsApp</th>
+                <th>Órdenes Total</th>
+                <th>Inversión Acumulada</th>
+                <th>Categoría / Tag</th>
+                <th>Acciones Directas</th>
+              </tr>
+            </thead>
+            <tbody id="crmTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------
+           TAB 4: PRODUCTOS & CATÁLOGO
+           -------------------------------------------------------- -->
+      <section id="tab-catalog" class="tab-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:800;">Gestión de Productos & Stock en Vivo</h2>
+            <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:4px;">
+              Modificá precios, encendé o apagá productos instantáneamente y controlá tu menú sin intermediarios.
+            </p>
+          </div>
+          <button class="btn-primary" onclick="showToast('➕ Nuevo producto habilitado con éxito.')">
+            <i data-lucide="plus-circle"></i> Nuevo Producto
+          </button>
+        </div>
+
+        <div class="catalog-grid" id="catalogGridContainer"></div>
+      </section>
+
+      <!-- --------------------------------------------------------
+           TAB 5: ADMINISTRACIÓN DE BANNERS Y PUBLICIDAD
+           -------------------------------------------------------- -->
+      <section id="tab-banners" class="tab-pane">
+        <div class="banner-admin-layout">
+          <div class="form-card">
+            <div>
+              <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:800;">Administración de Banners y Publicidad Propia</h2>
+              <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:4px;">
+                Subí banners promocionales, personalizá el texto destacado y aumentá tus conversiones de compra en la cabecera del catálogo digital.
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Texto Promocional Destacado (Barra Superior de Oferta):</label>
+              <input type="text" id="bannerTextInput" value="🔥 20% OFF en todos los Combos hasta las 23 hs" placeholder="Escribí aquí tu promoción del día...">
+            </div>
+
+            <div class="form-group">
+              <label>Imagen de Banner Principal (Recomendado 1200x400 px):</label>
+              <div style="border:2px dashed var(--border-subtle); padding:24px; border-radius:var(--r-md); text-align:center; background:var(--bg-subtle); cursor:pointer;" onclick="showToast('🖼️ Imagen de banner cargada exitosamente en el simulador!')">
+                <i data-lucide="upload-cloud" style="width:36px; height:36px; color:var(--brand-orange); margin-bottom:8px;"></i>
+                <div style="font-weight:700;">Hacé clic para subir o arrastrá tu imagen de banner</div>
+                <div style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">Soporta JPG, PNG y WEBP (Máx 5MB)</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Estado del Banner:</label>
+              <select onchange="showToast('⚡ Estado de banner actualizado.')">
+                <option value="active">✅ Activado y visible para los clientes</option>
+                <option value="scheduled">⏰ Programado para el fin de semana</option>
+                <option value="disabled">⏸️ Desactivado temporalmente</option>
+              </select>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:12px;">
+              <button class="btn-primary" onclick="showToast('✅ Configuración del banner guardada y publicada en vivo en tu catálogo!')">
+                <i data-lucide="save"></i> Guardar y Publicar en Vivo
+              </button>
+            </div>
+          </div>
+
+          <!-- Phone Live Preview -->
+          <div class="phone-preview-container">
+            <div style="font-family:var(--font-display); font-weight:800; font-size:1.05rem; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <i data-lucide="smartphone" style="color:var(--brand-orange);"></i> Vista Previa en el Celular del Cliente
+            </div>
+            
+            <div class="phone-bezel">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-offer-bar" id="livePhoneOfferText">
+                  🔥 20% OFF en todos los Combos hasta las 23 hs
+                </div>
+                <div class="phone-header-banner">
+                  <div>
+                    <div style="font-size:0.75rem; font-weight:700; opacity:0.9;">TuPedido! Sucursal Digital</div>
+                    <div class="phone-store-title">Burger House & Pizza</div>
+                  </div>
+                </div>
+                <div style="padding:16px; display:flex; flex-direction:column; gap:10px;">
+                  <div style="font-weight:800; font-size:0.9rem; color:#fff;">🍕 Categorías Destacadas</div>
+                  <div style="background:#1f2937; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                      <strong style="font-size:0.85rem; color:#fff;">Combo Burger Doble</strong>
+                      <div style="font-size:0.75rem; color:#9ca3af;">Papas fritas + Bebida</div>
+                    </div>
+                    <span style="color:var(--brand-orange); font-weight:800; font-size:0.9rem;">$11.250</span>
+                  </div>
+                  <div style="background:#1f2937; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                      <strong style="font-size:0.85rem; color:#fff;">Pizza Napolitana</strong>
+                      <div style="font-size:0.75rem; color:#9ca3af;">Masa madre a la piedra</div>
+                    </div>
+                    <span style="color:var(--brand-orange); font-weight:800; font-size:0.9rem;">$14.000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================
+       MODALS & TOAST NOTIFICATIONS
+       ========================================================== -->
+  
+  <!-- Modal Comanda / Detalle de Pedido -->
+  <div class="modal-overlay" id="comandaModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><i data-lucide="printer"></i> Comanda / Detalle del Pedido</div>
+        <button class="btn-close" onclick="closeOrderModal()">×</button>
+      </div>
+      <div id="comandaModalBody"></div>
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px;">
+        <button class="btn-quick-print" onclick="triggerPrint()">
+          <i data-lucide="printer"></i> Imprimir Comanda
+        </button>
+        <button class="btn-primary" onclick="closeOrderModal(); showToast('✅ Pedido confirmado listo para despacho.');">
+          Cerrar Ventana
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Editar Producto -->
+  <div class="modal-overlay" id="editProductModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><i data-lucide="edit-3"></i> Editar Precio & Producto</div>
+        <button class="btn-close" onclick="closeEditProductModal()">×</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="form-group">
+          <label>Nombre de Producto:</label>
+          <input type="text" id="editProdName">
+        </div>
+        <div class="form-group">
+          <label>Precio Actualizado ($ ARS):</label>
+          <input type="text" id="editProdPrice">
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+        <button class="btn-quick-print" onclick="closeEditProductModal()">Cancelar</button>
+        <button class="btn-primary" onclick="closeEditProductModal(); showToast('✅ Precio y datos del producto actualizados en vivo.');">
+          <i data-lucide="check"></i> Guardar Cambios
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JS Interactivity -->
+  <script src="panel.js"></script>
+</body>
+</html>
